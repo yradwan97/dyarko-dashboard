@@ -1,0 +1,3 @@
+export enum POINTS_TRANSACTIONS_URLS {
+  ALL_TRANSACTIONS = "/wallet",
+}

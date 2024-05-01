@@ -1,0 +1,813 @@
+{
+  "validation": {
+    "required": "this field is required"
+  },
+  "payment-types": {
+    "rent": "Rent",
+    "installment": "Installment",
+    "cash": "Cash",
+    "share": "Share",
+    "replacement": "Replacement"
+  },
+  "tabs": {
+    "tour-requests": "tour requests",
+    "installment-requests": "installment requests",
+    "rents": "rents",
+    "properties": "properties",
+    "videos": "videos",
+    "balance": "balance",
+    "wallet": "wallet",
+    "points": "points"
+  },
+  "general": {
+    "time-period": {
+      "day": "day",
+      "week": "week",
+      "month": "month"
+    },
+    "save": "save",
+    "password": "password",
+    "views": "views",
+    "likes": "likes",
+    "close": "close",
+    "have-account": "Already have an account?",
+    "pagination": {
+      "of": "of"
+    },
+    "civilian-id": "civilian id",
+    "validation": {
+      "email": "email is required",
+      "phone": "Phone Number is required",
+      "civilian_id": "Civilian ID is required",
+      "value": {
+        "email": "Please enter a valid email",
+        "phone": "Minimum character length is 8",
+        "password": "Minimun length is 6",
+        "civilian_id": "Minimum length is 12"
+      },
+      "password": "Password is required"
+    },
+    "back": "Back",
+    "edit": "edit",
+    "extend": {
+      "extend": "extend",
+      "extend-appear-time": "Extend post appearance",
+      "confirm": "Are you sure you want to extend this property's appearance time by 5 days?"
+    },
+    "previous": "Previous",
+    "skip": "Skip",
+    "submit": "Submit",
+    "next": "Next",
+    "loading": "Loading",
+    "add": "add",
+    "save-changes": "Save Changes",
+    "enter": "enter",
+    "upload": "Upload",
+    "cancel": "Cancel",
+    "powered-by": "Powered by",
+    "you-agree": "You agree to Estatery's",
+    "terms-and-conditions": "Terms of Use & Privacy Policy.",
+    "terms-and-conditions-message": "You don't need to consent as a condition of renting any property, or             buying any other goods or services. Message/data rates may apply.",
+    "reset": "reset",
+    "login": "Login",
+    "no-account": "Don't have an account?",
+    "free-signup": "Sign up for free",
+    "confirm": "Confirm",
+    "welcome": "welcome!",
+    "phone": "phone",
+    "agree-to": "Agree to",
+    "terms-conditions": "Terms and Conditions",
+    "privacy-policy": "Privacy Policy",
+    "refund-policy": "Refund Policy",
+    "signup": "sign up",
+    "disclaimer": "disclaimer",
+    "fail": "something went wrong, try again",
+    "send": "Send",
+    "end-contract": "request end contract",
+    "request": "request",
+    "date": "Date",
+    "property-id": "Property Id",
+    "contracts": "Contracts",
+    "action": "Action",
+    "request-disclaimer": "request disclaimer",
+    "description": "Description",
+    "amount": "Amount",
+    "accept": "Accept",
+    "deny": "Deny",
+    "ok": "Ok",
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "price": "Price",
+    "down-payment": "Down payment",
+    "type": "type",
+    "class": "class",
+    "auto-no": "PACI Number",
+    "contract": "contract *",
+    "select": "Select",
+    "city": "City",
+    "region": "region",
+    "replace": "replace with",
+    "replace-category": "replacement category",
+    "commission": "commission",
+    "dinar": "KD",
+    "yes": "Yes",
+    "no": "No",
+    "create": "Create",
+    "house": "House",
+    "caravan": "Caravan",
+    "chalet": "Chalet",
+    "farm": "Farm",
+    "land": "Land",
+    "tent_single": "Single Tent",
+    "tent_group": "Tent Group",
+    "upgrade": "upgrade",
+    "delete": "delete",
+    "available-date": "available date",
+    "payment-type": "payment type",
+    "category": "category",
+    "classes": {
+      "entertainment": "entertainment",
+      "residential": "residential",
+      "commercial": "commercial",
+      "administrative": "administrative"
+    },
+    "types": {
+      "stand_alone": "stand alone",
+      "duplex": "duplex",
+      "twin_house": "twin house",
+      "town_house": "town house",
+      "apartment": "apartment",
+      "floor": "floor",
+      "house": "house",
+      "palace": "palace",
+      "under_construction": "under construction",
+      "villa": "villa",
+      "studio": "studio",
+      "upper_chalet": "upper chalet",
+      "ground_chalet": "ground chalet",
+      "penthouse": "penthouse",
+      "movable": "movable",
+      "fixed": "fixed",
+      "tent_single": "tent single",
+      "tent_group": "tent group",
+      "farm": "farm",
+      "land": "land"
+    },
+    "area": "area",
+    "bathrooms": "bathrooms",
+    "bedrooms": "bedrooms",
+    "daily-price": "daily price",
+    "weekly-price": "weekly price",
+    "monthly-price": "monthly price",
+    "is-finished": "finish type",
+    "amenities": "amenities",
+    "no-data": "no data to show",
+    "services": "services",
+    "interior-design": "interior design",
+    "tents-info": "tents info",
+    "title": "Title",
+    "property-title": "Property Title",
+    "apply": "apply",
+    "filter": "Filter",
+    "approved": "approve",
+    "rejected": "reject",
+    "search": "Search tenant by name or property id...",
+    "done": "done",
+    "post": "Post",
+    "comments": "Comments",
+    "videos": {
+      "views": "views",
+      "add-video": {
+        "text": "add video",
+        "message": "Make sure you have filled in all the necessary fields and have             uploaded all the required files."
+      },
+      "no-videos": "No videos to show"
+    },
+    "info": "Info",
+    "points": "points",
+    "point": "point",
+    "open-file": "Open file",
+    "for": "For",
+    "read-more": "read more",
+    "remove": "Remove"
+  },
+  "layout": {
+    "navbar": {
+      "logout": "logout",
+      "add-a-property": "add a property"
+    },
+    "sidebar": {
+      "dashboard": "dashboard",
+      "wallet": "wallet",
+      "reports": "reports",
+      "requests": "requests",
+      "contracts": "contracts",
+      "my-real-estates": "my real estates",
+      "help": "help",
+      "settings": "settings"
+    }
+  },
+  "pages": {
+    "dashboard": {
+      "videos": {
+        "add-video": "Add a video",
+        "comments": {
+          "comment": "Leave a comment",
+          "none": "There are no comments"
+        },
+        "add": {
+          "validation": {
+            "payment-option": "Payment Option is required",
+            "title": "Title is required",
+            "video": "Video is required",
+            "video-length": "Only one video is allowed",
+            "allowed-formats": "Only the following formats are allowed",
+            "maximum-size": "File size should be less than 2MB"
+          },
+          "title": {
+            "text": "Video Title",
+            "placeholder": "Please add a title to the video"
+          }
+        },
+        "payment-methods": {
+          "wallet": "Wallet",
+          "points": "Points",
+          "label": "Payment Options"
+        },
+        "upload-video": {
+          "text": "Upload Video",
+          "label": "Upload the video (up to 2 min)"
+        }
+      }
+    },
+    "notifications": {
+      "action": {
+        "disclaimer": {
+          "title": "Accept or Reject Disclaimer Request?",
+          "deny": {
+            "success": "Disclaimer request rejected successfully.",
+            "fail": "Couldn't reject disclaimer request, please try again later."
+          },
+          "accept": {
+            "success": "Disclaimer request accepted successfully.",
+            "fail": "Couldn't accept disclaimer request, please try again later."
+          }
+        },
+        "additional_service": {
+          "title": "Accept or Deny Additional Service Request?",
+          "deny": {
+            "success": "Additional service request rejected successfully.",
+            "fail": "Couldn't reject additional service request, please try again later."
+          },
+          "accept": {
+            "success": "Additional service request accepted successfully.",
+            "fail": "Couldn't accept additional service request, please try again later."
+          }
+        }
+      },
+      "notifications": "notifications",
+      "see-all": "see all",
+      "rent-request": "Approve Rent Request",
+      "rent-modal": {
+        "property": "Property:",
+        "start-date": "Start Date:",
+        "end-date": "End Date:",
+        "rent-type": "Rent Type:",
+        "code": "Property Code:"
+      },
+      "read-all": "Read all",
+      "none": "You don't have any new notifications"
+    },
+    "help": {
+      "send-message": "Send us a message on whatsapp"
+    },
+    "settings": {
+      "toggle-notifications": "Enable notifications",
+      "tabs": {
+        "profile": "Profile",
+        "my-reviews": "My Reviews",
+        "my-account": "My Account",
+        "bank-account": "Bank Account",
+        "available-time": "Available Time",
+        "my-refund-policies": "My Refund Policies"
+      }
+    },
+    "contracts": {
+      "disclaimer": {
+        "success": "your request has been sent"
+      },
+      "end-contract": {
+        "success": "request end contract has been sent"
+      }
+    },
+    "invoices": {
+      "no-invoices": "There is no invoices to show",
+      "view-all": "View all property invoices",
+      "view-contract": "View property contract",
+      "view-services": "View requested services",
+      "table": {
+        "title": "title",
+        "tenant": "tenant",
+        "date": "Date",
+        "paid-at": "paid at",
+        "details": "details",
+        "total": "total",
+        "status": "status",
+        "pdf": "pdf"
+      },
+      "open-pdf": "Open Pdf",
+      "caravan-pickup-location": "Caravan pickup location",
+      "requested-services": "Requested services"
+    },
+    "properties": {
+      "promotion": {
+        "choose": "Please choose your Ad type",
+        "ad": {
+          "feature": "Features Ad",
+          "search": "Search Ad"
+        }
+      },
+      "edit": {
+        "edit-property": "Edit property"
+      },
+      "create": {
+        "validation": {
+          "payment-type": "payment type is required",
+          "daily-price": "daily price is required",
+          "weekly-price": "weekly price is required",
+          "monthly-price": "monthly price is required",
+          "minimum-months": "number of minimum months is required",
+          "renter-id": "renter civilian id is required",
+          "rent-start-date": "rent start date is required",
+          "rent-end-date": "rent end date is required",
+          "owner-mobile": "owner phone number is required",
+          "value": {
+            "owner-mobile": "owner phone number must be 8 digits"
+          },
+          "insurance": "insurance is required",
+          "price": "price is required",
+          "max-installment-period": "maximum installment period is required",
+          "down-payment": "down payment is required",
+          "contract": "contract is required",
+          "type": "type is required",
+          "class": "class is required",
+          "auto-no": "PACI Number is required",
+          "lat": "Latitude is required",
+          "long": "Longitude is required",
+          "city": "city is required",
+          "region": "region is required",
+          "replace": "replacement category is required",
+          "commission": "commission is required",
+          "tent-details": "please fill all fields to add tent",
+          "duplicate-tent": "duplicate tent code, please change and try again",
+          "title": "title is required",
+          "description": "description is required",
+          "area": "area is required",
+          "bedrooms": "number of bedrooms is required.",
+          "bathrooms": "number of bathrooms is required",
+          "finish-type": "finish type is required",
+          "capacity": "capacity is required",
+          "available-date": "available date is required",
+          "category": "category is required",
+          "refund-policy": "refund policy is required"
+        },
+        "steps": {
+          "category": "category",
+          "property-details": "property details",
+          "property-features": "property features",
+          "buying-options": "buying options"
+        },
+        "payment-frequency": "Payment frequency",
+        "is-daily": "Is daily?",
+        "is-weekly": "Is weekly?",
+        "is-monthly": "Is monthly?",
+        "daily-price": "daily price *",
+        "weekly-price": "weekly price *",
+        "monthly-price": "monthly price *",
+        "minimum-months": "Minimum months *",
+        "renter-id": "renter civilian id *",
+        "has-renter": "does this property has a renter",
+        "rent-start-date": "rent start date *",
+        "rent-end-date": "rent end date *",
+        "rent-type": "rent type *",
+        "owner-mobile": "owner phone number *",
+        "insurance": "insurance *",
+        "max-installment-period": "Maximum installment period",
+        "add-new": "add new property",
+        "add-new-message": "Make sure you have filled in all the necessary fields and have             uploaded all the required files.",
+        "lat": "Latitude",
+        "long": "Longitude",
+        "new-service": {
+          "success": "Service added successfully!",
+          "error": "Adding new service failed, try again."
+        },
+        "new-amenity": {
+          "success": "Amenity added successfully!",
+          "error": "Adding new amenity failed, try again."
+        },
+        "main-image": "main image",
+        "images": "images",
+        "title": "title",
+        "description": "description",
+        "area": "area",
+        "bedrooms": "bedrooms",
+        "bathrooms": "bathrooms",
+        "is-finished": "is finished ?",
+        "finish-type": "finish type",
+        "finish-types": {
+          "none": "none",
+          "medium": "medium",
+          "lux": "lux",
+          "super-lux": "super lux",
+          "ultra": "ultra super lux"
+        },
+        "capacity": "capacity",
+        "has-beach": "Has beach?",
+        "has-pool": "Has pool?",
+        "has-garden": "Has garden?",
+        "tents": "Tents",
+        "tent": {
+          "code": "Code",
+          "capacity": "Capacity",
+          "insurance": "Insurance",
+          "date": "Available Date",
+          "price": "Price",
+          "new": "Add a new tent"
+        },
+        "amenities": "amenities",
+        "select-amenities": "Select Amenities",
+        "services": "services",
+        "select-services": "Select services",
+        "interior-design": "interior design",
+        "available-date": "available date",
+        "rules": "rules",
+        "amenity": {
+          "title": "Create New Amenity",
+          "name": "amenity name"
+        },
+        "service": {
+          "title": "Create New Service",
+          "name": "service name",
+          "price": "service price"
+        },
+        "choose-category": "Choose the category"
+      },
+      "no-properties": "When you add properties they will appear here",
+      "about": "about this property",
+      "info": "property info",
+      "listed-on-dyarko": "listed on dyarko",
+      "new-offer": "Create an offer on this property.",
+      "offer": "Offer",
+      "offer-amount": "offer amount",
+      "offer-validity": "Offer Valid Until",
+      "make-offer": "Make offer"
+    },
+    "reports": {
+      "chart": {
+        "label": "By Month"
+      },
+      "no-reports": {
+        "1": "You have no reports yet",
+        "2": "when you post ads it will appear here"
+      },
+      "filter": {
+        "name": "Buyer/Renter Name",
+        "code": "Property Code",
+        "status": "Status",
+        "date-from": "Date (From)",
+        "date-to": "Date (To)"
+      },
+      "table": {
+        "title": "Transactions",
+        "columns": {
+          "invoice": "invoice",
+          "due-date": "due date",
+          "tenant": "tenant",
+          "amount": "amount"
+        }
+      }
+    },
+    "requests": {
+      "installment": {
+        "table": {
+          "request-date": "request date",
+          "user": "user",
+          "phone": "phone number",
+          "property-id": "property id",
+          "status": "status",
+          "actions": "action"
+        },
+        "requirements": "installment requirements",
+        "update": {
+          "success": "your request has been sent",
+          "fail": "something went wrong, try again"
+        },
+        "reject": "want to reject this request ?",
+        "period": "installment period",
+        "validation": {
+          "period": "Maximum installment period is required",
+          "installment-type": "Installment type is required",
+          "amount": "Amount is required",
+          "start-date": "Start date is required"
+        },
+        "installment-type": "installment type",
+        "types": {
+          "monthly": "monthly",
+          "quarterly": "quarterly",
+          "semi-annually": "semi-annually",
+          "annually": "annually"
+        },
+        "amount": "amount",
+        "start-date": "start date",
+        "contract": "contract"
+      },
+      "tour": {
+        "table": {
+          "date": "Date",
+          "user": "User",
+          "phone": "Phone number",
+          "property-id": "Property Id",
+          "status": "Status",
+          "actions": "Actions"
+        }
+      }
+    },
+    "wallet": {
+      "balance": {
+        "your-balance": "Your balance",
+        "table": {
+          "process": "Process",
+          "due-date": "Due Date",
+          "balance": "Balance"
+        },
+        "transactions": "transactions"
+      },
+      "dyakro-transactions": {
+        "table": {
+          "title": "Title",
+          "date": "Date",
+          "amount": "Amount"
+        },
+        "dyakro-transactions": "Dyarko Transactions",
+        "dyarko-transfer": "Dyarko Transfer"
+      },
+      "user-transactions": "User Transactions",
+      "points": {
+        "table": {
+          "process": "process",
+          "due-date": "due date",
+          "amount": "amount",
+          "points": "points"
+        },
+        "question-mark": "How are points calculated?",
+        "got-it": "Got it"
+      },
+      "user-wallet": {
+        "payment-details": "payment details",
+        "total-balance": "Total Balance",
+        "table": {
+          "process": "process",
+          "due-date": "due date",
+          "balance": "balance"
+        },
+        "pay": {
+          "placeholder": "Enter amount to recharge"
+        },
+        "recharge": "Recharge",
+        "payment-button": "Pay",
+        "all-transaction": "All Transactions",
+        "deductions": "Deductions",
+        "transactions": "Transactions",
+        "recharge-history": "Recharge History"
+      },
+      "question-mark": {
+        "wallet": {
+          "property": "Upload Property",
+          "video": "Upload Video",
+          "search_feature": "Search Feature",
+          "home_feature": "Home Feature"
+        }
+      }
+    }
+  },
+  "auth": {
+    "verifying": "verify ...",
+    "otp": {
+      "get-verified": "get verified",
+      "want-verified": "want to have a verified account?",
+      "download": "Download the",
+      "app": "otp app",
+      "get-verified-now": "and have a verified account now.",
+      "follow-steps": "Follow steps and get your",
+      "otp-number": "OTP number"
+    },
+    "confirm-email": "Your email has been verified successfully!",
+    "confirm-email-message": "Close this tab and proceed to login with your credentials.",
+    "password-changed": "Password Changed Successfully",
+    "password-changed-message": "Click the button below to login.",
+    "forgot-password": "Forget your password?",
+    "forgot-password-description": "enter your email to reset it.",
+    "login": {
+      "welcome": "welcome back",
+      "welcome-message": "Welcome back! Please enter your details."
+    },
+    "reset-password": {
+      "reset": "Reset your password",
+      "new": "new password"
+    },
+    "signup": {
+      "enter-details": "please enter your details",
+      "placeholder": {
+        "civilian-id": "enter civilian id"
+      },
+      "signup-success": "your account has been created. please check your email to verify it",
+      "validation": {
+        "type": "type is required",
+        "name": "Name is required",
+        "value": {
+          "name": "Please enter a valid name"
+        }
+      },
+      "types": {
+        "owner": "Owner",
+        "developer": "Developer",
+        "broker": "Broker",
+        "agent": "Agent"
+      },
+      "agree": "Please agree to the following",
+      "agree-all": "Agree to all.",
+      "modals": {
+        "terms-conditions": "Terms and conditions",
+        "privacy": "Privacy Policy",
+        "refund": "Refund Policies"
+      }
+    }
+  },
+  "property": {
+    "active": "Active",
+    "promote": "Promote"
+  },
+  "map": {
+    "select-location": "Drag the pin and drop to select a location."
+  },
+  "not-found": "This page is not found",
+  "regions": {
+    "name": {
+      "abdallah_as_salim": "Abdallah as-Salim",
+      "abdallah_mubarak_al_sabah": "Abdallah Mubarak al-Sabah",
+      "abu_hulayfah": "Abu Hulayfah",
+      "ad_dawhah": "Ad-Dawhah",
+      "al_adan": "Al-Adan",
+      "al_ahmadi": "Al-Ahmadi",
+      "al_andalus": "Al-Andalus",
+      "al_ardhiyah": "Al-Ardhiyah",
+      "al_fardaws": "Al-Fardaws",
+      "al_farwaniyah": "Al-Farwaniyah",
+      "al_fayha": "Al-Fayha",
+      "al_fintas": "Al-Fintas",
+      "al_fuhayhil": "Al-Fuhayhil",
+      "al_jabiriyah": "Al-Jabiriyah",
+      "al_jabriya": "Al-Jabriya",
+      "al_jahra": "Al-Jahra",
+      "al_kuwayt": "Al-Kuwayt",
+      "al_mahbulah": "Al-Mahbulah",
+      "al_manqaf": "Al-Manqaf",
+      "al_qadisiyah": "Al-Qadisiyah",
+      "al_qasr": "Al-Qasr",
+      "al_qosur": "Al-Qosur",
+      "al_qurayn": "Al-Qurayn",
+      "al_salmiya": "Al-Salmiya",
+      "al_shuwaikh": "Al-Shuwaikh",
+      "al_udayliyah": "Al-Udayliyah",
+      "al_uyawn": "Al-Uyawn",
+      "al_wahah": "Al-Wahah",
+      "al_yarmuk": "Al-Yarmuk",
+      "ali_subah_al_salim": "Ali Subah al-Salim",
+      "an_nasim": "An-Nasim",
+      "ar_rabiyah": "Ar-Rabiyah",
+      "ar_raqay": "Ar-Raq'ay",
+      "ar_riqqah": "Ar-Riqqah",
+      "ar_rumaytiyah": "Ar-Rumaytiyah",
+      "as_sabahaiyah": "As-Sabahaiyah",
+      "as_sulaybikhat": "As-Sulaybikhat",
+      "as_sulaybiyah": "As-Sulaybiyah",
+      "as_surrah": "As-Surrah",
+      "az_zahar": "Az-Zahar",
+      "banayd_al_qar": "Banayd al-Qar",
+      "bayan": "Bayan",
+      "hadiyah": "Hadiyah",
+      "hawalli": "Hawalli",
+      "kayfan": "Kayfan",
+      "khitan": "Khitan",
+      "kuwait_city": "Kuwait City",
+      "mubarak_al_kabir": "Mubarak al-Kabir",
+      "mushrif": "Mushrif",
+      "qalib_ash_shuyukh": "Qalib ash-Shuyukh",
+      "qartabah": "Qartabah",
+      "sabah_an_nasr": "Sabah an-Nasr",
+      "sabah_as_salim": "Sabah as-Salim",
+      "salwa": "Salwa",
+      "tayma": "Tayma"
+    }
+  },
+  "gov": {
+    "name": {
+      "al_ahmadi": "Al Ahmadi",
+      "al_asimah": "Al Asimah",
+      "al_farwaniyah": "Al Farwaniyah",
+      "hawalli": "Hawalli",
+      "al_jahra": "Al Jahra",
+      "mubarak_al_kabeer": "Mubarak Al Kabeer",
+      "kuwait_city": "Kuwait City"
+    }
+  },
+  "account": {
+    "tour": {
+      "time-from-required": "Time from is required",
+      "date-not-available": "Please enter available date first.",
+      "enter-available-date": "Please enter a valid date (i.e. hh:mm AM or PM)",
+      "available-date-required": "Available date is required",
+      "no-past-date": "Past date are not allowed",
+      "time-to-required": "Time to is required",
+      "to-after-from": "Value must be after time from",
+      "available-time": "Available Time",
+      "available-date": "Available Date",
+      "tour-schedule": "Tour Schedule"
+    },
+    "bank": {
+      "bank-account": "bank account",
+      "account-name": "account name",
+      "validation": {
+        "account-name": "account name is required",
+        "name": "Name is required",
+        "swift": "swift code is required",
+        "iban": "iban is required",
+        "value": {
+          "name": "Please enter a valid name",
+          "account-name": "Please enter a valid account name"
+        }
+      },
+      "swift": "swiftcode",
+      "iban": "iban"
+    },
+    "name": "name",
+    "change-password": "Change Password",
+    "password": {
+      "validation": {
+        "current": "Password is required",
+        "value": {
+          "current": "Minimum character length is 6",
+          "new": "Password is required"
+        },
+        "new": "Password is required"
+      },
+      "current": "current password",
+      "new": "new password"
+    },
+    "my-account": "My Account",
+    "email": "Email",
+    "verify": "Verify",
+    "enable-2-step": "Enable 2-steps verification",
+    "2-step-message": "Make your account extra secure. Along with your password, you’ll need           to enter a code that we text to your phone each time you sign in.",
+    "linked-accounts": "Linked Accounts",
+    "linked-accounts-message": "We use this to let you sign in easily.",
+    "google-login": "Sign in with Google",
+    "remove": "Remove",
+    "delete": "Delete Account",
+    "delete-all-data": "Delete your account and all the data",
+    "policy": {
+      "upload-file": "Please select a file and enter a policy name.",
+      "upload-success": "Policy uploaded successfully!",
+      "upload-error": "Error uploading policy. Please try again.",
+      "add": "Add Policy",
+      "policy-name": "Enter policy name",
+      "choose-file": "Choose refund policy",
+      "upload": "Upload Policy",
+      "delete-success": "Policy deleted successfully!",
+      "delete-error": "Error deleting policy. Please try again.",
+      "policies": "Refund Policies",
+      "no-policies": "No refund policies yet. Add one now!"
+    },
+    "reviews": {
+      "my-reviews": "My Reviews",
+      "no-reviews": "No reviews yet!"
+    },
+    "profile": {
+      "personal-info": "Personal Info",
+      "picture-upload-success": "Profile picture uploaded successfully",
+      "picture-upload-fail": "Picture upload failed, please try again.",
+      "picture-delete-success": "Picture deleted successfully.",
+      "picture-delete-fail": "Deleting picture failed, please try again.",
+      "info-update-success": "Profile information updated successfully.",
+      "info-update-fail": "Profile information update failed, please try again.",
+      "validation": {
+        "name": "Name is required",
+        "value": {
+          "name": "Please enter a valid name"
+        }
+      }
+    },
+    "type": "type"
+  }
+}

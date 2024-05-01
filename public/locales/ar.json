@@ -1,0 +1,783 @@
+{
+  "validation": {
+    "required": "هذه البيانات مطلوبة"
+  },
+  "tabs": {
+    "tour-requests": "طلبات المعاينة",
+    "installment-requests": "طلبات التقسيط",
+    "rents": "الإيجارات",
+    "properties": "الوحدات",
+    "videos": "فيديوهات",
+    "balance": "الرصيد",
+    "wallet": "المحفظة",
+    "points": "النقاط"
+  },
+  "payment-types": {
+    "rent": "إيجار",
+    "installment": "تقسيط",
+    "cash": "بيع",
+    "share": "مشاركة",
+    "replacement": "بدل"
+  },
+  "general": {
+    "time-period": {
+      "day": "يوم",
+      "week": "اسبوع",
+      "month": "شهر"
+    },
+    "save": "حفظ",
+    "read-more": "قراءة المزيد",
+    "likes": "إعجابات",
+    "views": "مشاهدات",
+    "password": "كلمة المرور",
+    "have-account": "هل لديك حساب؟",
+    "pagination": {
+      "of": "of"
+    },
+    "civilian-id": "البطاقة المدنية",
+    "validation": {
+      "email": "البريد الإلكتروني مطلوب",
+      "phone": "رقم الهاتف مطلوب",
+      "civilian_id": "الرقم المدني مطلوب",
+      "value": {
+        "email": "منفلك أدخل بريد إلكتروني صالح",
+        "phone": "أقل عدد من الأرقام 8",
+        "password": "أقل عدد من الحروف 6",
+        "civilian_id": "الرقم المدني مكون من 12 رقم"
+      },
+      "password": "كلمة المرور مطلوبة"
+    },
+    "back": "عودة",
+    "edit": "تعديل",
+    "extend": {
+      "extend": "تمديد",
+      "extend-appear-time": "تمديد ظهور المنشور",
+      "confirm": "هل أنت متأكد من رغبتك في تمديد وقت ظهور هذا العقار بمدة خمس أيام؟"
+    },
+    "previous": "السابق",
+    "skip": "تخطى",
+    "submit": "تأكيد",
+    "next": "التالي",
+    "loading": "تحميل",
+    "add": "إضافة",
+    "save-changes": "حفظ التغييرات",
+    "enter": "ادخال",
+    "upload": "تحميل",
+    "cancel": "إلغاء",
+    "powered-by": "مشغل بواسطة",
+    "you-agree": "موافق على العقارات",
+    "terms-and-conditions": "شروط الإستخدام & سياسة الخصوصية",
+    "terms-and-conditions-message": "لا تحتاج إلى الموافقة كشرط لاستئجار أي عقار، أو شراء أي سلع أو خدمات أخرى. قد يتم تطبيق أسعار الرسائل/البيانات.",
+    "reset": "إعادة ضبط",
+    "login": "تسجيل الدخول",
+    "no-account": "لا تمتلك حساب ؟",
+    "free-signup": "سجل حسابك مجاناً !",
+    "confirm": "تأكيد",
+    "welcome": "مرحباً بك!",
+    "phone": "رقم الهاتف",
+    "agree-to": "موافقة على",
+    "terms-conditions": "الشروط والأحكام",
+    "privacy-policy": "سياسة الخصوصية",
+    "refund-policy": "سياسة الإسترداد",
+    "signup": "تسجيل الحساب",
+    "disclaimer": "إبراء الذمة المالية",
+    "fail": "حدث خطاء ما , أعد المحاولة لاحقاً",
+    "send": "إرسال",
+    "end-contract": "طلب إنهاء العقد",
+    "request": "طلب",
+    "date": "تاريخ",
+    "property-id": "كود الوحدة",
+    "contracts": "العقود",
+    "action": "إجراء",
+    "request-disclaimer": "طلب إبراء ذمة مالية",
+    "description": "التفاصيل",
+    "amount": "القيمة",
+    "accept": "قبول",
+    "deny": "رفض",
+    "ok": "حسناً",
+    "daily": "يومي",
+    "weekly": "إسبوعى",
+    "monthly": "شهري",
+    "price": "السعر",
+    "down-payment": "مقدم التعاقد",
+    "type": "النوع",
+    "class": "الفئة",
+    "auto-no": "الرقم الألي",
+    "contract": "العقد *",
+    "select": "إختر",
+    "city": "المدينة",
+    "region": "المنطقة",
+    "replace": "بدلاً من",
+    "replace-category": "قسم البدل",
+    "commission": "العمولة",
+    "dinar": "د.ك",
+    "yes": "نعم",
+    "no": "لا",
+    "create": "إنشاء",
+    "house": "منزل",
+    "caravan": "كرفان",
+    "chalet": "شالية",
+    "farm": "مزرعة",
+    "land": "أرض",
+    "tent_single": "خيم خاصة",
+    "tent_group": "مخيمات",
+    "upgrade": "ترقية ",
+    "delete": "مسح",
+    "available-date": "التاريخ المتاح",
+    "payment-type": "طريقة الدفع",
+    "category": "الفئة",
+    "classes": {
+      "entertainment": "ترفيهي",
+      "residential": "سكني",
+      "commercial": "تجاري",
+      "administrative": "إداري"
+    },
+    "types": {
+      "stand_alone": "مستقل",
+      "duplex": "دوبلكس",
+      "twin_house": "بيت توأم",
+      "town_house": "بيت مدينة",
+      "apartment": "شقة",
+      "floor": "طابق",
+      "house": "منزل",
+      "palace": "قصر",
+      "under_construction": "تحت الإنشاء",
+      "villa": "فيلا",
+      "studio": "استديو",
+      "upper_chalet": "شاليه علوي",
+      "ground_chalet": "شاليه أرضي",
+      "penthouse": "بنتهاوس",
+      "movable": "قابل للتحريك",
+      "fixed": "ثابت",
+      "tent_single": "خيمة فردية",
+      "tent_group": "مجموعة خيام",
+      "farm": "مزرعة",
+      "land": "أرض"
+    },
+    "area": "المساحة",
+    "bathrooms": "الحمامات",
+    "bedrooms": "الغرف",
+    "daily-price": "السعر اليومي",
+    "weekly-price": "السعر الإسبوعي",
+    "monthly-price": "السعر الشهري",
+    "is-finished": "نوع التشطيب",
+    "amenities": "الرفاهيات",
+    "no-data": "لا توجد بيانات",
+    "services": "الخدمات",
+    "interior-design": "التصميم الداخلي",
+    "tents-info": "تفاصيل المخيم",
+    "title": "العنوان",
+    "property-title": "عنوان الوحدة",
+    "apply": "تأكيد",
+    "filter": "فلتر",
+    "approved": "موافقة",
+    "rejected": "رفض",
+    "search": "البحث عن المستأجر برقم الهوية المدنية أو الإسم ..",
+    "done": "تم",
+    "post": "نشر المقطع",
+    "comments": "تعليقات",
+    "videos": {
+      "views": "مشاهدة",
+      "add-video": {
+        "text": "إضافة فيديو",
+        "message": "تأكد من ملء جميع الحقول اللازمة وتحميل جميع الملفات المطلوبة."
+      },
+      "no-videos": "لا توجد فيديوهات لعرضها !"
+    },
+    "info": "التفاصيل",
+    "points": "النقاط",
+    "point": "نقطة",
+    "open-file": "فتح الملف",
+    "for": "من اجل",
+    "close": "غلق",
+    "remove": "حذف"
+  },
+  "layout": {
+    "navbar": {
+      "logout": "تسجيل الخروج",
+      "add-a-property": "إضافة وحدة"
+    },
+    "sidebar": {
+      "dashboard": "الصفحة الرئيسية",
+      "wallet": "المحفظة",
+      "reports": "التقارير",
+      "requests": "الطلبات",
+      "contracts": "العقود",
+      "my-real-estates": "عقاراتي",
+      "help": "المساعدة",
+      "settings": "الإعدادات"
+    }
+  },
+  "pages": {
+    "dashboard": {
+      "videos": {
+        "add-video": "إضافة فيديو",
+        "comments": {
+          "comment": "أترك تعليق",
+          "none": "لا توجد تعليقات"
+        },
+        "add": {
+          "validation": {
+            "payment-option": "طريقة الدفع مطلوبة",
+            "title": "العنوان مطلوب",
+            "video": "ملف الفيديومطلوب",
+            "video-length": "يُسمح بفيديو واحد فقط",
+            "allowed-formats": "يُسمح فقط بالتنسيقات التالية",
+            "maximum-size": "يجب أن يكون مساحة الفيديو أقل من 2 ميجا بايت"
+          },
+          "title": {
+            "text": "عنوان الفيديو",
+            "placeholder": "من فضلك أضف عنوان للفيديو"
+          }
+        },
+        "payment-methods": {
+          "wallet": "المحفظة",
+          "points": "النقاط",
+          "label": "خيارات الدفع"
+        },
+        "upload-video": {
+          "text": "تحميل فيديو",
+          "label": "تحميل الفيديو (حتى دقيقتين)"
+        }
+      }
+    },
+    "notifications": {
+      "notifications": "الإشعارات",
+      "see-all": "عرض الكل",
+      "rent-request": "الموافقة على طلب الإيجار",
+      "rent-modal": {
+        "property": "إسم الوحدة:",
+        "start-date": "تاريخ البداية:",
+        "end-date": "تاريخ النهاية:",
+        "rent-type": "نوع الإيجار:",
+        "code": "كود الوحد:"
+      },
+      "read-all": "قراءة الكل",
+      "none": "ليس لديك أي إشعارات"
+    },
+    "help": {
+      "send-message": "أرسل لنا رسالة عبر الواتساب"
+    },
+    "settings": {
+      "toggle-notifications": "تفعيل الإشعارات",
+      "tabs": {
+        "profile": "المعلومات الشخصية",
+        "my-reviews": "التقييمات",
+        "my-account": "حسابي",
+        "bank-account": "الحساب البنكي",
+        "available-time": "الوقت المتاح",
+        "my-refund-policies": "سياسات اللاسترداد"
+      }
+    },
+    "contracts": {
+      "disclaimer": {
+        "success": "تم ارسال طلبك"
+      },
+      "end-contract": {
+        "success": "طلب إرسال طلب إنهاء العقد بنجاح"
+      }
+    },
+    "invoices": {
+      "no-invoices": "لا توجد فواتير ",
+      "view-all": "عرض كل فواتير الوحدة",
+      "view-contract": "عرض عقد الوحدة",
+      "table": {
+        "title": "العنوان",
+        "tenant": "المستأجر",
+        "date": "التاريخ",
+        "paid-at": "دفعت في",
+        "details": "التفاصيل",
+        "total": "الإجمالى",
+        "status": "الحالة",
+        "pdf": "pdf"
+      },
+      "open-pdf": "فتح Pdf",
+      "view-services": "عرض الخدمات المطلوبة",
+      "caravan-pickup-location": "مكان استلام الكرافان",
+      "requested-services": "الخدمات المطلوبة"
+    },
+    "properties": {
+      "promotion": {
+        "choose": "من فضلك إختر نوع الإعلان",
+        "ad": {
+          "feature": "إعلان الصفحة الرئيسية",
+          "search": "إعلان محرك البحث"
+        }
+      },
+      "create": {
+        "validation": {
+          "payment-type": "نوع الدفع مطلوب",
+          "daily-price": "السعر اليومي مطلوب",
+          "weekly-price": "السعر الإسبوعى مطلوب",
+          "monthly-price": "السعر الشهري مطلوب",
+          "minimum-months": "أقل عدد شهور العاقد مطلوب",
+          "renter-id": "الرقم المدني للمستأجر مطلوب",
+          "rent-start-date": "بداية تاريخ الإيجار مطلوب",
+          "rent-end-date": "نهاية تاريخ الإيجار مطلوب",
+          "owner-mobile": "رقم هاتف المالك مطلوب",
+          "value": {
+            "owner-mobile": "رقم الهاتف لا يجب أن يقل عن 8 أرقام"
+          },
+          "insurance": "التأمين مطلوب",
+          "price": "السعر مطلوب",
+          "max-installment-period": "أقصي عدد من سنوات التقسيط مطلوب",
+          "down-payment": "مقدم التعاقد مطلوب",
+          "contract": "عقد الملكية مطلوب",
+          "type": "نوع الوحدة مطلوب",
+          "class": "فئة الوحدة مطلوب",
+          "auto-no": "الرقم الألى مطلوب",
+          "lat": "خط العرض مطلوب",
+          "long": "خط الطول مطلوب",
+          "city": "إختر المدينة",
+          "region": "إختر المنطقة",
+          "replace": "نوع الإستبدال مطلوب",
+          "commission": "العمولة مطلوبة",
+          "tent-details": "من فضلك إملاء جميع البيانات المطلوبة لإضافة خيمة",
+          "duplicate-tent": "رمز الخيمة مكرر، يرجى تغييره والمحاولة مرة أخرى",
+          "title": "العنوان مطلوب",
+          "description": "التفاصيل مطلوبة",
+          "area": "المساحة مطلوبة",
+          "bedrooms": "عدد الغرف مطلوب",
+          "bathrooms": "عد الحمامات مطلوب",
+          "finish-type": "نوع التشطيب مطلوب",
+          "capacity": "السعة مطلوبة",
+          "available-date": "التاريخ المتاح مطلوب",
+          "category": "القسم مطلوب",
+          "refund-policy": "سياسة الإسترداد مطلوبة"
+        },
+        "steps": {
+          "category": "الفئة",
+          "property-details": "تفاصيل الوحدة",
+          "property-features": "خصائص الوحدة",
+          "buying-options": "خيارات الشراء"
+        },
+        "payment-frequency": "طبيعة الدفع",
+        "is-daily": "يومي؟",
+        "is-weekly": "إسبوعي؟",
+        "is-monthly": "شهري؟",
+        "daily-price": "سعر اليوم*",
+        "weekly-price": "سعر الإسبوع *",
+        "monthly-price": "سعر الشهر *",
+        "minimum-months": "أقل عدد من الشهور *",
+        "renter-id": "الرقم المدني للمستأجر *",
+        "has-renter": "هل لهذه الوحدة مستأجر؟",
+        "rent-start-date": "بداية الإيجار *",
+        "rent-end-date": "نهاية الإيجار *",
+        "rent-type": "نوع الإيجار *",
+        "owner-mobile": "رقم الهاتف للمالك *",
+        "insurance": "التأمين *",
+        "max-installment-period": "أقصي مدة تقسيط",
+        "add-new": "إضافة وحدة جديدة",
+        "add-new-message": "تأكد من ملء جميع الحقول اللازمة وتحميل جميع الملفات المطلوبة.",
+        "lat": "خط العرض",
+        "long": "خط الطول",
+        "new-service": {
+          "success": "تم إضافة الخدمة بنجاح !",
+          "error": "لم يتم إضافة الخدمة بنجاح , حاول مجدداً"
+        },
+        "new-amenity": {
+          "success": "تم إضافة الرفاهية بنجاح!",
+          "error": "لم يتم إضافة الرفاهية بنجاح , حاول مجدداً"
+        },
+        "main-image": "الصورة الرئيسية",
+        "images": "الصور",
+        "title": "العنوان",
+        "description": "التفاصيل",
+        "area": "المساحة",
+        "bedrooms": "الغرف",
+        "bathrooms": "الحمامات",
+        "is-finished": "هل تم التشطيب ؟",
+        "finish-type": "نوع التشطيب",
+        "finish-types": {
+          "none": "لا يوجد",
+          "medium": "متوسط",
+          "lux": "لوكس",
+          "super-lux": "سوبر لوكس",
+          "ultra": "ألترا سوبر لوكس"
+        },
+        "capacity": "السعة",
+        "has-beach": "لدية شاطئ ؟",
+        "has-pool": "لدية حمام سباحة ؟",
+        "has-garden": "لدية حديقة ؟",
+        "tents": "الخيم",
+        "tent": {
+          "code": "الكود",
+          "capacity": "السعة",
+          "insurance": "التأمين",
+          "date": "التاريخ المتاح",
+          "price": "السعر",
+          "new": "إضافة خيمة جديدة"
+        },
+        "amenities": "الرفاهيات",
+        "select-amenities": "إختر رفاهية",
+        "services": "الخدمات",
+        "select-services": "إختر خدمة",
+        "interior-design": "التصميم الداخلى",
+        "available-date": "التاريخ المتاح",
+        "rules": "الشروط",
+        "amenity": {
+          "title": "إضافة رفاهية جديدة",
+          "name": "إسم الرفاهية"
+        },
+        "service": {
+          "title": "إضافة خدمة جديدة",
+          "name": "إسم الخدمة",
+          "price": "سعر الخدمة"
+        },
+        "choose-category": "إختر الفئة"
+      },
+      "no-properties": "عند إضافة الوحدات سوف تظهر هنا",
+      "about": "عن الوحدة",
+      "info": "تفاصيل الوحدة",
+      "listed-on-dyarko": "مدرجة على دياركو",
+      "new-offer": "تفعيل عرض على هذا العقار.",
+      "offer": "عرض",
+      "offer-validity": "العرض صالح حتى",
+      "make-offer": "تقديم عرض",
+      "offer-amount": "قيمة العرض",
+      "edit": {
+        "edit-property": "تعديل وحدة"
+      }
+    },
+    "reports": {
+      "chart": {
+        "label": "بالشهر"
+      },
+      "no-reports": {
+        "1": "ليس لديك تقارير بعد",
+        "2": "عند تفعيل الإعلان الخاص بك سوف يظهر هنا"
+      },
+      "filter": {
+        "name": "إسم المستأجر/المشتري",
+        "code": "كود الوحدة",
+        "status": "الحالة",
+        "date-from": "التاريخ (من)",
+        "date-to": "التاريخ (الى)"
+      },
+      "table": {
+        "title": "المعاملات المالية",
+        "columns": {
+          "invoice": "الفاتورة",
+          "due-date": "تاريخ الإستحقاق",
+          "tenant": "المستأجر",
+          "amount": "القيمة"
+        }
+      }
+    },
+    "requests": {
+      "installment": {
+        "table": {
+          "request-date": "تاريخ الطلب",
+          "user": "المستخدم",
+          "phone": "رقم الهاتف",
+          "property-id": "كود الوحدة",
+          "status": "الحالة",
+          "actions": "الإجراءات"
+        },
+        "requirements": "طلبات التقسيط",
+        "update": {
+          "success": "لقد تم إرسال طلبك بنجاح",
+          "fail": "حدث خطاء ما , برجاء المحاولة لاحقاً"
+        },
+        "reject": "هل تريد رفض هذا الطلب؟",
+        "period": "فترة التقسيط",
+        "validation": {
+          "period": "أقصى مدة للتقسيط مطلوبة",
+          "installment-type": "نوع التقسيط مطلوب",
+          "amount": "قيمة القسط مطلوبة",
+          "start-date": "تاريخ أول قسط مطلوب"
+        },
+        "installment-type": "نوع التقسيط",
+        "types": {
+          "monthly": "شهري",
+          "quarterly": "ربع سنوي",
+          "semi-annually": "نصف سنوي",
+          "annually": "سنوي"
+        },
+        "amount": "القيمة",
+        "start-date": "تاريخ البداية",
+        "contract": "العقد"
+      },
+      "tour": {
+        "table": {
+          "date": "التاريخ",
+          "user": "المستخدم",
+          "phone": "رقم الهاتف",
+          "property-id": "كود الوحدة",
+          "status": "الحالة",
+          "actions": "الإجراءات"
+        }
+      }
+    },
+    "wallet": {
+      "balance": {
+        "your-balance": "رصيدك",
+        "table": {
+          "process": "العملية",
+          "due-date": "تاريخ الإستحقاق",
+          "balance": "الرصيد"
+        },
+        "transactions": "المعاملات المالية"
+      },
+      "dyakro-transactions": {
+        "table": {
+          "title": "العنوان",
+          "date": "التاريخ",
+          "amount": "القيمة"
+        },
+        "dyakro-transactions": "معاملات دياركو المالية",
+        "dyarko-transfer": "تحويلات دياركو"
+      },
+      "user-transactions": "مدفوعات المستخدمين",
+      "points": {
+        "table": {
+          "process": "العملية",
+          "due-date": "تاريخ الإستحقاق",
+          "amount": "القيمة",
+          "points": "النقاط"
+        },
+        "question-mark": "كيف يتم إحتساب النقاط؟",
+        "got-it": "لقد فهمت"
+      },
+      "user-wallet": {
+        "total-balance": "إجمالى الرصيد",
+        "table": {
+          "process": "العملية",
+          "due-date": "تاريخ الدفع",
+          "balance": "الرصيد"
+        },
+        "pay": {
+          "placeholder": "أدخل قيمة الشحن"
+        },
+        "recharge": "شحن",
+        "payment-button": "دفع",
+        "all-transaction": "كل المدفوعات",
+        "deductions": "العمليات المخصومة",
+        "transactions": "المدفوعات",
+        "recharge-history": "تاريخ الشحن"
+      },
+      "question-mark": {
+        "wallet": {
+          "property": "رفع وحدة",
+          "video": "رفع مقطع",
+          "search_feature": "اعلان بحث للوحدة",
+          "home_feature": "اعلان صفحة رئيسية للوحدة"
+        }
+      }
+    }
+  },
+  "auth": {
+    "verifying": "التحقق ...",
+    "otp": {
+      "get-verified": "الحصول على التحقق",
+      "want-verified": "هل تريد أن يكون لديك حساب مفعل؟",
+      "download": "قم بتحميل",
+      "app": "otp تطبيق",
+      "get-verified-now": "وقم بتفعيل حسابك الأن.",
+      "follow-steps": "تتبع الخطوات وأحصل على",
+      "otp-number": "OTP كود"
+    },
+    "confirm-email": "لقد تم التحقق من بريدك الإلكتروني بنجاح!",
+    "confirm-email-message": "أغلق علامة التبويب هذه وتابع تسجيل الدخول باستخدام البيانات الخاصة بك.",
+    "password-changed": "تم تغيير كلمة المرور بنجاح",
+    "password-changed-message": "انقر فوق الزر أدناه لتسجيل الدخول.",
+    "forgot-password": "هل نسيت كلمة المرور ؟",
+    "forgot-password-description": "أدخل بريدك الإلكتروني لإعادة تعيين كلمة المرور.",
+    "login": {
+      "welcome": "مرحباً بعودتك",
+      "welcome-message": "مرحبًا بعودتك! الرجاء إدخال البيانات الخاصة بك."
+    },
+    "reset-password": {
+      "reset": "إعادة تعيين كلمة المرور",
+      "new": "كلمة المرور الجديدة"
+    },
+    "signup": {
+      "enter-details": "من فضلك أدخل بياناتك",
+      "signup-success": "لقد تم إنشاء حسابك. يرجى التحقق من بريدك الإلكتروني للتحقق منه",
+      "validation": {
+        "type": "النوع مطلوب",
+        "name": "الإسم مطلوب",
+        "value": {
+          "name": "من فضلك أدخل إسم صالح"
+        }
+      },
+      "types": {
+        "owner": "مالك العقار",
+        "developer": "مطور عقاري",
+        "broker": "مسوق عقاري",
+        "agent": "وكيل عقاري"
+      },
+      "agree": "يرجى الموافقة على ما يلي",
+      "agree-all": "الموافقة على الكل.",
+      "placeholder": {
+        "civilian-id": "ادخل رقم البطاقة الميدانية"
+      }
+    }
+  },
+  "property": {
+    "active": "تشط",
+    "promote": "تمويل"
+  },
+  "map": {
+    "select-location": "اسحب العلامة وأتركها لتحديد الموقع."
+  },
+  "not-found": "هذة الصفحة غير متاحة",
+  "regions": {
+    "name": {
+      "abdallah_as_salim": "عبد الله السالم",
+      "abdallah_mubarak_al_sabah": "عبد الله مبارك الصباح",
+      "abu_hulayfah": "أبو حليفة",
+      "ad_dawhah": "الدوحة",
+      "al_adan": "العدان",
+      "al_ahmadi": "الأحمدي",
+      "al_andalus": "الأندلس",
+      "al_ardhiyah": "الأرضية",
+      "al_fardaws": "الفردوس",
+      "al_farwaniyah": "الفروانية",
+      "al_fayha": "الفيحاء",
+      "al_fintas": "الفنطاس",
+      "al_fuhayhil": "الفحيحيل",
+      "al_jabiriyah": "الجابرية",
+      "al_jabriya": "الجابرية",
+      "al_jahra": "الجهراء",
+      "al_kuwayt": "الكويت",
+      "al_mahbulah": "المهبولة",
+      "al_manqaf": "المنقف",
+      "al_qadisiyah": "القادسية",
+      "al_qasr": "القصر",
+      "al_qosur": "القصور",
+      "al_qurayn": "القرين",
+      "al_salmiya": "السالمية",
+      "al_shuwaikh": "الشويخ",
+      "al_udayliyah": "العديلية",
+      "al_uyawn": "العيون",
+      "al_wahah": "الواحة",
+      "al_yarmuk": "اليرموك",
+      "ali_subah_al_salim": "علي صباح السالم",
+      "an_nasim": "النسيم",
+      "ar_rabiyah": "الرابية",
+      "ar_raqay": "الرقي",
+      "ar_riqqah": "الرقة",
+      "ar_rumaytiyah": "الرميثية",
+      "as_sabahaiyah": "الصباحية",
+      "as_sulaybikhat": "السليبيخات",
+      "as_sulaybiyah": "السليبية",
+      "as_surrah": "الصرة",
+      "az_zahar": "الزهر",
+      "banayd_al_qar": "بنيد القار",
+      "bayan": "بيان",
+      "hadiyah": "هدية",
+      "hawalli": "حولي",
+      "kayfan": "كيفان",
+      "khitan": "خيطان",
+      "kuwait_city": "مدينة الكويت",
+      "mubarak_al_kabir": "مبارك الكبير",
+      "mushrif": "مشرف",
+      "qalib_ash_shuyukh": "قليب الشيوخ",
+      "qartabah": "قرطبة",
+      "sabah_an_nasr": "صباح النصر",
+      "sabah_as_salim": "صباح السالم",
+      "salwa": "سلوى",
+      "tayma": "تيماء"
+    }
+  },
+  "gov": {
+    "name": {
+      "al_ahmadi": "الأحمدي",
+      "al_asimah": "العاصمة",
+      "al_farwaniyah": "الفروانية",
+      "hawalli": "حولي",
+      "al_jahra": "الجهراء",
+      "mubarak_al_kabeer": "مبارك الكبير",
+      "kuwait_city": "مدينة الكويت"
+    }
+  },
+  "account": {
+    "tour": {
+      "time-from-required": "بداية الوقت مطلوبة",
+      "date-not-available": "من فضلك إختار تاريخ متاح",
+      "enter-available-date": "الرجاء إدخال تاريخ صالح (i.e. hh:mm AM or PM)",
+      "available-date-required": "التاريخ المتاح مطلوب",
+      "no-past-date": "لا يجب إختيار تاريخ في الماضي",
+      "time-to-required": "نهاية الوقت مطلوبة",
+      "to-after-from": "Value must be after time from",
+      "available-time": "الوقت المتاح",
+      "available-date": "التاريخ المتاج",
+      "tour-schedule": "جدول المعاينات"
+    },
+    "bank": {
+      "bank-account": "الحساب البنكي",
+      "account-name": "إسم الحساب",
+      "validation": {
+        "account-name": "إسم الحساب مطلوب",
+        "name": "الإسم مطلوب",
+        "swift": "swift كود مطلوب",
+        "iban": "iban مطلوب",
+        "value": {
+          "name": "من فضلك أدخل إسم صالح",
+          "account-name": "من فضلك أخدل إسم للحساب صالح"
+        }
+      },
+      "swift": "swiftcode",
+      "iban": "iban"
+    },
+    "name": "الإسم",
+    "change-password": "تغيير كلمة المرور",
+    "password": {
+      "validation": {
+        "current": "كلمة المرور مطلوبة",
+        "value": {
+          "current": "أقل عدد من الحروف 6",
+          "new": "كلمة المرور مطلوبة"
+        },
+        "new": "كلمة المرور مطلوبة"
+      },
+      "current": "كلمة المرور الحالية",
+      "new": "كلمة المرور الجديدة"
+    },
+    "my-account": "حسابي",
+    "email": "البريد الإلكتروني",
+    "verify": "التحقق",
+    "enable-2-step": "تمكين التحقق بخطوتين",
+    "2-step-message": "اجعل حسابك أكثر أمانًا. بالإضافة إلى كلمة المرور الخاصة بك، ستحتاج إلى إدخال رمز نرسله إلى بريدك الإلكتروني في كل مرة تقوم فيها بتسجيل الدخول.",
+    "linked-accounts": "حسابات متصلة",
+    "linked-accounts-message": "نحن نستخدم هذا للسماح لك بتسجيل الدخول بسهولة.",
+    "google-login": "تسجيل الدخول بواسطة حساب جوجل",
+    "remove": "مسح",
+    "delete": "مسح الحساب",
+    "delete-all-data": "احذف حسابك وجميع البيانات",
+    "policy": {
+      "upload-file": "الرجاء تحديد ملف وإدخال اسم السياسة.",
+      "upload-success": "تم تحميل سياسة الإسترداد بنجاح",
+      "upload-error": "لم يتم حفظ السياسة بنجاح , برجاء المحاولة مرة أخري",
+      "add": "إضافة سياسة إسترداد",
+      "policy-name": "أدخل إسم السياسة",
+      "choose-file": "إختر سياسة الإسترداد",
+      "upload": "تحميل سياسة الإسترداد",
+      "delete-success": "تم مسح سياسة الإسترداد بنجاح",
+      "delete-error": "لم يتم مسح سياسة الإسترداد بنجاح , حاول مجدداً",
+      "policies": "سياسات الإسترداد",
+      "no-policies": "لا توجد سياسات إيترداد بعد , أضف واحدة الأن !"
+    },
+    "reviews": {
+      "my-reviews": "التقييمات",
+      "no-reviews": "لا توجد تقييمات بعد !"
+    },
+    "profile": {
+      "personal-info": "المعلومات الشخصية",
+      "picture-upload-success": "تم رفع صورة الملف الشخصي بنجاح",
+      "picture-upload-fail": "لم يتم رفع صورة النلف الشخصي بنجاح , حاول مجدداً ",
+      "picture-delete-success": "تم مسح صورة الملف الشخصي بنجاح.",
+      "picture-delete-fail": "لم يتم مسح صورة الملف الشخصي بنجاح , حاول مجدداً",
+      "info-update-success": "تم تحديث بيانات النلف الشخصي بنجاح",
+      "info-update-fail": "لم يتم تحديث البيانات بنجاح , حاول مجدداً",
+      "validation": {
+        "name": "الإسم مطلوب",
+        "value": {
+          "name": "من فضلك أدخل إسم صالح"
+        }
+      }
+    },
+    "type": "النوع"
+  }
+}

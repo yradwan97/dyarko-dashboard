@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+    /* width */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: @apply bg-main-600;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: @apply bg-gray-400;
+    border-radius: 4px;
+
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  /* input[type = "checkbox"]:checked::before{
+    background:#FFF;
+  } */
+}
+
+@layer utilities {
+  .reflect-y {
+    transform: scaleX(-1);
+  }
+}
