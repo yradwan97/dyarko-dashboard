@@ -33,7 +33,7 @@ const Profile = () => {
 
       <div className="flex items-center my-5">
         <div className="w-[100px] h-[100px] flex items-center justify-center bg-gray-200 mr-4 rounded-full">
-          <img src={auth.user?.image} className="w-[80px] h-[80px] rounded-full" alt="avatar" />
+          <img src={auth.user?.image} className="w-[80px] h-[80px] rounded-full" alt="" />
         </div>
         <div className="flex flex-col ps-2 sm:flex-row gap-4 gap-x-4 grow">
           <Button

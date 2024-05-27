@@ -28,13 +28,14 @@ import { RefundPolicy } from "features/account-settings/my-refund-policies/types
 import UploadPolicyModal from "features/account-settings/my-refund-policies/components/UploadPolicyModal";
 import { t } from "i18next";
 import { MdArrowDropDown } from "react-icons/md";
+import { Nullable } from "types";
+import { Property } from "features/properties";
 
 export interface PropertyDetailsProps {
   register: any;
   errors: any;
   getValues: any;
   setValue: any;
-  isEditable: boolean
 }
 
 interface MapLatLng {
@@ -46,16 +47,13 @@ const PropertyDetails = ({
   register,
   errors,
   getValues,
-  isEditable,
   setValue,
 }: PropertyDetailsProps) => {
   const auth = useAppSelector((state) => state.auth);
   const [selectedLocation, setSelectedLocation] = useState<MapLatLng>();
   const [showUplaodPolicyModal, setShowUploadPolicyModal] = useState(false);
   const { data: refundPolicies, isSuccess, refetch } = useGetRefundPolicies();
-  useEffect(() => {
-    console.log(getValues())
-  }, [getValues()]);
+  
   const handleSelect = (location: { lat: number; lng: number }) => {
     setSelectedLocation(location);
   };
@@ -79,7 +77,6 @@ const PropertyDetails = ({
               borderColor="gray.200"
               borderWidth={1}
               borderStyle="solid"
-              disabled={isEditable}
               icon={<MdArrowDropDown style={{position: "absolute", right: 'auto', left: '0'}} />}
               textTransform="capitalize"
               right={'auto'}
@@ -106,7 +103,6 @@ const PropertyDetails = ({
               borderColor="gray.200"
               borderWidth={1}
               borderStyle="solid"
-              disabled={isEditable}
               textTransform="capitalize"
               {...register("class", {
                 required: `${t("pages.properties.create.validation.class")}`,
@@ -159,7 +155,6 @@ const PropertyDetails = ({
           <Input
             type="file"
             height="45px"
-            disabled={isEditable}
             borderColor="gray.200"
             borderWidth={1}
             borderStyle="solid"
@@ -182,7 +177,7 @@ const PropertyDetails = ({
           )}
         </FormControl>
 
-        {!isEditable && (getValues("payment_type") === "rent" ||
+        {(getValues("payment_type") === "rent" ||
           getValues("payment_type") === "installment") && (
           <>
             <FormControl marginBlock={4}>
@@ -202,7 +197,7 @@ const PropertyDetails = ({
                   })}
                 >
                   {isSuccess &&
-                    refundPolicies?.map(
+                    Array.isArray(refundPolicies) && refundPolicies?.map(
                       (policy: RefundPolicy, index: number) => (
                         <option key={index} value={policy._id}>
                           {policy.name}
@@ -235,7 +230,7 @@ const PropertyDetails = ({
         <Stack direction={"row"} spacing={2}>
           <FormControl>
             <Map
-              isDraggable={!isEditable}
+              isDraggable
               widthClassname="w-4/5"
               latitude={29.2799283891296}
               longitude={47.90808142031251}
@@ -315,7 +310,6 @@ const PropertyDetails = ({
                 height="45px"
                 borderColor="gray.200"
                 borderWidth={1}
-                disabled={isEditable}
                 borderStyle="solid"
                 placeholder={`${t("general.city")}`}
                 textTransform="capitalize"
@@ -353,7 +347,6 @@ const PropertyDetails = ({
                 borderColor="gray.200"
                 borderWidth={1}
                 borderStyle="solid"
-                disabled={isEditable}
                 placeholder={`${t("general.region")}`}
                 textTransform="capitalize"
                 {...register("region", {

@@ -41,6 +41,7 @@ const InvoicePropertyCard = ({
     <div className={clsx("flex-1", className)}>
       <Link to={`${ROUTES.PROPERTIES}/${property?._id}`}>
         <PropertyImage
+          isTerminated={property?.is_terminated}
           imageSrc={property?.image}
           propertyTitle={property?.title}
         />

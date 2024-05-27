@@ -8,13 +8,16 @@ import { Input, Label } from "components/shared/form";
 import { FiSearch } from "react-icons/fi";
 import { ChangeEventHandler } from "react";
 import { TableSkeleton } from "components/shared/UI/table";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { t } from "i18next";
 import Paginator from "components/shared/pagination/Paginator";
+import { Typography } from "components/shared/UI";
+import { useGetProperty } from "features/properties";
 
 const PropertyInvoices = () => {
   const [filter, dispatchFilter] = useInvoicesFilterReducer();
   const propertyId = useParams().id;
+  const {data: property} = useGetProperty(propertyId!)
   const { data, isSuccess, isLoading } = useGetInvoices(filter, propertyId);
 
   const handlePageChange = (page: number) => {
@@ -40,14 +43,20 @@ const PropertyInvoices = () => {
         />
       </div>
       <div className="rounded-lg px-2 mt-6">
-        {isLoading ? <TableSkeleton colsNumber={6} /> : null}
-        {isSuccess ? <InvoicesTable invoices={data?.invoices} /> : null}
+        {!property?.property.is_terminated ? <>
+          {isLoading ? <TableSkeleton colsNumber={6} /> : null}
+          {isSuccess ? <InvoicesTable invoices={data?.invoices} /> : null}
+        </> : 
+          <Typography variant="body-lg-medium" as="h2" className="text-center mt-20">
+            {property?.property.terminated_reason || t("general.property-terminated")}
+          </Typography>
+        }
       </div>
-      <Paginator
+      {!property?.property.is_terminated && <Paginator
         page={Number(filter.page)}
         lastPage={data?.pages || 0}
         onChange={handlePageChange}
-      />
+      />}
     </div>
   );
 };

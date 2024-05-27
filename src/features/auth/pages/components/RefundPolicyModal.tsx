@@ -19,11 +19,12 @@ import { t } from "i18next";
 
 interface RefundPolicyModalProps {
   isOpen: boolean;
+  policies: RefundPolicy[] | undefined
+  isSuccess: boolean
   onClose: () => void;
 }
 
-const RefundPolicyModal = ({ isOpen, onClose }: RefundPolicyModalProps) => {
-  const { policies, isSuccess } = useGetRefundPolicy();
+const RefundPolicyModal = ({ isOpen, onClose, policies, isSuccess }: RefundPolicyModalProps) => {
   return (
     <Modal
       isCentered

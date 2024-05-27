@@ -190,7 +190,9 @@
     "open-file": "فتح الملف",
     "for": "من اجل",
     "close": "غلق",
-    "remove": "حذف"
+    "remove": "حذف",
+    "change-language": "تغيير اللغة",
+    "property-terminated": ".تم إنهاء هذه الوحدة"
   },
   "layout": {
     "navbar": {
@@ -436,7 +438,8 @@
       "make-offer": "تقديم عرض",
       "offer-amount": "قيمة العرض",
       "edit": {
-        "edit-property": "تعديل وحدة"
+        "edit-property": "تعديل وحدة",
+        "view-image": "عرض الصورة"
       }
     },
     "reports": {

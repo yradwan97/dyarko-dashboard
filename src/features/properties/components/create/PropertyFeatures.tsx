@@ -99,13 +99,13 @@ const PropertyFeatures = ({
   } = useGetPropertyAmenities();
 
   const serviceOptions: DisplayService[] =
-    serverServices?.map((service) => ({
+    serverServices?.map((service: any) => ({
       label: `${service.name} - ${t("general.dinar")} ${service.price}`,
       value: service._id,
     })) || [];
 
   const amenitiesOptions: DisplayAmenity[] =
-    serverAmenities?.map((service) => ({
+    serverAmenities?.map((service: any) => ({
       label: service.name,
       value: service._id,
     })) || [];

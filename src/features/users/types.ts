@@ -35,4 +35,7 @@ export enum USER_TYPES {
 
 export enum USER_ROLES {
   OWNER = "owner",
+  AGENT = "agent",
+  BROKER = "broker",
+  DEVELOPER = "developer"
 }

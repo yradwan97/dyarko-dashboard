@@ -18,7 +18,7 @@ import {
   Alert,
   AlertIcon,
   Checkbox,
-  useDisclosure
+  useDisclosure,
 } from "@chakra-ui/react";
 import { Typography } from "components/shared/UI";
 import Navbar from "../components/Navbar";
@@ -33,31 +33,62 @@ import i18next, { t } from "i18next";
 import PrivacyPoliciesModal from "./components/PrivacyPoliciesModal";
 import RefundPolicyModal from "./components/RefundPolicyModal";
 import PoweredBy from "../components/PoweredBy";
+import { useGetTermsAndConditions } from "../hooks/useGetTermsAndConditions";
+import { useGetPrivacyPolicy } from "../hooks/useGetPrivacyPolicy";
+import { useGetRefundPolicy } from "../hooks/useGetRefundPolicy";
 
 const SignUp = () => {
-  const {isOpen: isPrivacyOpen, onOpen: openPrivacy, onClose: closePrivacy} = useDisclosure()
-  const {isOpen: isTermsOpen, onOpen: openTerms, onClose: closeTerms} = useDisclosure()
-  const {isOpen: isRefundOpen, onOpen: openRefund, onClose: closeRefund} = useDisclosure()
+  const {
+    isOpen: isPrivacyOpen,
+    onOpen: openPrivacy,
+    onClose: closePrivacy,
+  } = useDisclosure();
+  const {
+    isOpen: isTermsOpen,
+    onOpen: openTerms,
+    onClose: closeTerms,
+  } = useDisclosure();
+  const {
+    isOpen: isRefundOpen,
+    onOpen: openRefund,
+    onClose: closeRefund,
+  } = useDisclosure();
+
+  const { terms, isSuccess } = useGetTermsAndConditions();
+  const { policies, isSuccess: isPrivacySuccess } = useGetPrivacyPolicy();
+  const { policies: refundPolicies, isSuccess: isRefundSuccess } =
+    useGetRefundPolicy();
+
+  const hasTerms = isSuccess && terms.length > 0;
+  const hasPolicies = isSuccess && policies.length > 0;
+  const hasRefund = isSuccess && refundPolicies.length > 0;
+  const hasAny = hasTerms || hasRefund || hasPolicies;
 
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
   } = useForm();
-  const toast = useToast({ position: "top", status: "success", duration: 3000, colorScheme: "blue" });
+  const toast = useToast({
+    position: "top",
+    status: "success",
+    duration: 3000,
+    colorScheme: "blue",
+  });
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const auth = useAppSelector(state => state.auth);
+  const auth = useAppSelector((state) => state.auth);
 
   const [showPassword, setShowPassword] = useState(false);
   const [checkedItems, setCheckedItems] = React.useState({
-  termsConditions: false,
-  privacyPolicy: false,
-  refundPolicy: false,
-});
+    termsConditions: false,
+    privacyPolicy: false,
+    refundPolicy: false,
+  });
 
-  const allChecked = Object.values(checkedItems).every(Boolean)
-  const isIndeterminate = Object.values(checkedItems).some(Boolean) && !allChecked
+  const allChecked = Object.values(checkedItems).every(Boolean);
+  const isIndeterminate =
+    Object.values(checkedItems).some(Boolean) && !allChecked;
 
   const handleCheckboxChange = (name) => (e) => {
     setCheckedItems({
@@ -76,8 +107,12 @@ const SignUp = () => {
         <Navbar />
         <div className="container flex max-w-xl flex-col space-y-10 py-10 px-14">
           <section className="text-center lg:text-start">
-            <Typography variant="h3" as="h3" className="mb-3 text-black capitalize">
-            {t("general.welcome")}
+            <Typography
+              variant="h3"
+              as="h3"
+              className="mb-3 text-black capitalize"
+            >
+              {t("general.welcome")}
             </Typography>
             <Typography
               variant="body-md-medium"
@@ -87,7 +122,7 @@ const SignUp = () => {
               {t("general.welcome")} {t("auth.signup.enter-details")}
             </Typography>
           </section>
-          {(auth.errors && Array.isArray(auth.errors)) ? (
+          {auth.errors && Array.isArray(auth.errors) ? (
             <Alert bg="error" color="white" borderRadius={4}>
               <AlertIcon color="white" />
               {auth.errors.map((error, index) => (
@@ -95,31 +130,40 @@ const SignUp = () => {
               ))}
             </Alert>
           ) : null}
-          <form onSubmit={handleSubmit(values => {
-            dispatch(authRegister(values))
-              .unwrap()
-              .then(_ => {
-                toast({ description: `${t("auth.signup.signup-success")}` });
-                navigate(ROUTES.LOGIN)
-              })
-          })}>
+          <form
+            onSubmit={handleSubmit((values) => {
+              dispatch(authRegister(values))
+                .unwrap()
+                .then((_) => {
+                  toast({ description: `${t("auth.signup.signup-success")}` });
+                  navigate(ROUTES.LOGIN);
+                });
+            })}
+          >
             <Stack spacing={4}>
               <FormControl>
                 <FormLabel color="black" textTransform="capitalize" mb={2}>
                   {t("account.type")}
                 </FormLabel>
                 <Select
-                  borderRadius=".5rem" w="100%" height="50px"
-                  borderWidth="1px" borderStyle="solid" borderColor="gray.200"
-                  
+                  borderRadius=".5rem"
+                  w="100%"
+                  height="50px"
+                  borderWidth="1px"
+                  borderStyle="solid"
+                  borderColor="gray.200"
                   {...register("type", {
-                    required: `${t("auth.signup.validation.type")}`
+                    required: `${t("auth.signup.validation.type")}`,
                   })}
                 >
                   <option value="owner">{t("auth.signup.types.owner")}</option>
                   <option value="agent">{t("auth.signup.types.agent")}</option>
-                  <option value="broker">{t("auth.signup.types.broker")}</option>
-                  <option value="developer">{t("auth.signup.types.developer")}</option>
+                  <option value="broker">
+                    {t("auth.signup.types.broker")}
+                  </option>
+                  <option value="developer">
+                    {t("auth.signup.types.developer")}
+                  </option>
                 </Select>
                 {errors.type && (
                   <Text fontSize="14px" color="red" mt={2}>
@@ -133,14 +177,20 @@ const SignUp = () => {
                   {t("account.name")}
                 </FormLabel>
                 <Input
-                  type="text" placeholder={`${t("general.enter")} ${t("account.name")}`} textTransform={"capitalize"}
-                  borderRadius=".5rem" w="100%" paddingBlock="1.50rem" paddingInline="1.25rem"
-                  borderWidth="1px" borderStyle="solid" borderColor="gray.200"
+                  type="text"
+                  placeholder={`${t("general.enter")} ${t("account.name")}`}
+                  textTransform={"capitalize"}
+                  borderRadius=".5rem"
+                  w="100%"
+                  paddingBlock="1.50rem"
+                  paddingInline="1.25rem"
+                  borderWidth="1px"
+                  borderStyle="solid"
+                  borderColor="gray.200"
                   {...register("name", {
                     required: `${t("auth.signup.validation.name")}`,
                     pattern: {
-                      value: /^[a-zA-Z1-9]+(\s+[a-zA-Z1-9]+)*$/
-                      ,
+                      value: /^[a-zA-Z1-9]+(\s+[a-zA-Z1-9]+)*$/,
                       message: `${t("auth.signup.validation.value.name")}`,
                     },
                   })}
@@ -157,9 +207,15 @@ const SignUp = () => {
                   {t("account.email")}
                 </FormLabel>
                 <Input
-                  type="email" placeholder="hi@example.com"
-                  borderRadius=".5rem" w="100%" paddingBlock="1.50rem" paddingInline="1.25rem"
-                  borderWidth="1px" borderStyle="solid" borderColor="gray.200"
+                  type="email"
+                  placeholder="hi@example.com"
+                  borderRadius=".5rem"
+                  w="100%"
+                  paddingBlock="1.50rem"
+                  paddingInline="1.25rem"
+                  borderWidth="1px"
+                  borderStyle="solid"
+                  borderColor="gray.200"
                   {...register("email", {
                     required: `${t("general.validation.email")}`,
                     pattern: {
@@ -180,14 +236,19 @@ const SignUp = () => {
                   {t("general.phone")}
                 </FormLabel>
                 <Flex>
-                  <CountryDropdown
-                    onSelect={val => console.log(val)}
-                  />
+                  <CountryDropdown onSelect={(val) => console.log(val)} />
                   <Input
-                    type="tel" placeholder="+(965) 5678712"
-                    borderRadius=".5rem" w="100%" paddingBlock="1.50rem" paddingInline="1.25rem"
-                    borderWidth="1px" borderStyle="solid" borderColor="gray.200"
-                    borderTopStartRadius={0} borderBottomStartRadius={0}
+                    type="tel"
+                    placeholder="+(965) 5678712"
+                    borderRadius=".5rem"
+                    w="100%"
+                    paddingBlock="1.50rem"
+                    paddingInline="1.25rem"
+                    borderWidth="1px"
+                    borderStyle="solid"
+                    borderColor="gray.200"
+                    borderTopStartRadius={0}
+                    borderBottomStartRadius={0}
                     {...register("phone", {
                       required: `${t("general.validation.phone")}`,
                       minLength: {
@@ -210,9 +271,16 @@ const SignUp = () => {
                   {t("general.civilian-id")}
                 </FormLabel>
                 <Input
-                  type="number" placeholder={t("auth.signup.placeholder.civilian-id")} textTransform={"capitalize"}
-                  borderRadius=".5rem" w="100%" paddingBlock="1.50rem" paddingInline="1.25rem"
-                  borderWidth="1px" borderStyle="solid" borderColor="gray.200"
+                  type="number"
+                  placeholder={t("auth.signup.placeholder.civilian-id")}
+                  textTransform={"capitalize"}
+                  borderRadius=".5rem"
+                  w="100%"
+                  paddingBlock="1.50rem"
+                  paddingInline="1.25rem"
+                  borderWidth="1px"
+                  borderStyle="solid"
+                  borderColor="gray.200"
                   {...register("civilian_id", {
                     required: `${t("general.validation.civilian_id")}`,
                     pattern: {
@@ -229,17 +297,22 @@ const SignUp = () => {
               </FormControl>
 
               <FormControl>
-                <FormLabel
-                  color="black" textTransform="capitalize" mb={2}
-                >
+                <FormLabel color="black" textTransform="capitalize" mb={2}>
                   {t("general.password")}
                 </FormLabel>
                 <Flex position="relative">
                   <Input
                     type={showPassword ? "text" : "password"}
-                    placeholder={`${t("general.enter")} ${t("general.password")}`}
-                    borderRadius=".5rem" w="100%" paddingBlock="1.50rem" paddingInline="1.25rem"
-                    borderWidth="1px" borderStyle="solid" borderColor="gray.200"
+                    placeholder={`${t("general.enter")} ${t(
+                      "general.password"
+                    )}`}
+                    borderRadius=".5rem"
+                    w="100%"
+                    paddingBlock="1.50rem"
+                    paddingInline="1.25rem"
+                    borderWidth="1px"
+                    borderStyle="solid"
+                    borderColor="gray.200"
                     {...register("password", {
                       required: `${t("general.validation.password")}`,
                       minLength: {
@@ -249,11 +322,22 @@ const SignUp = () => {
                     })}
                   />
                   <Button
-                    type="button" size="sm" bg="none" position="absolute"
-                    className="rtl:left-2 ltr:right-2" top="50%" transform="translateY(-50%)" color="gray.400"
-                    onClick={() => setShowPassword(!showPassword)} zIndex="12"
+                    type="button"
+                    size="sm"
+                    bg="none"
+                    position="absolute"
+                    className="rtl:left-2 ltr:right-2"
+                    top="50%"
+                    transform="translateY(-50%)"
+                    color="gray.400"
+                    onClick={() => setShowPassword(!showPassword)}
+                    zIndex="12"
                   >
-                    {showPassword ? <FiIcons.FiEyeOff size={20} /> : <FiIcons.FiEye size={20} />}
+                    {showPassword ? (
+                      <FiIcons.FiEyeOff size={20} />
+                    ) : (
+                      <FiIcons.FiEye size={20} />
+                    )}
                   </Button>
                 </Flex>
                 {errors.password && (
@@ -263,63 +347,111 @@ const SignUp = () => {
                 )}
               </FormControl>
 
-              <FormControl mt={2}>
-                <FormLabel color="black" textTransform="capitalize" mb={2}>
-                  {t("auth.signup.agree")}
-                </FormLabel>
-                <Checkbox
-                  isChecked={allChecked}
-                  mt={3}
-                  isIndeterminate={isIndeterminate}
-                  onChange={(e) => setCheckedItems([e.target.checked, e.target.checked, e.target.checked])}
-                >
-                  {t("auth.signup.agree-all")}
-                </Checkbox>
-                <Stack pl={6} mt={1} spacing={1}>
+              {hasAny && (
+                <FormControl mt={2}>
+                  <FormLabel color="black" textTransform="capitalize" mb={2}>
+                    {t("auth.signup.agree")}
+                  </FormLabel>
                   <Checkbox
-                    isChecked={checkedItems.termsConditions}
-                    {...register("termsConditions", { required: "Please agree here first." })}
-                    onChange={(e) => handleCheckboxChange("termsConditions")}
+                    isChecked={allChecked}
+                    mt={3}
+                    isIndeterminate={isIndeterminate}
+                    onChange={(e) =>
+                      setCheckedItems([
+                        e.target.checked,
+                        e.target.checked,
+                        e.target.checked,
+                      ])
+                    }
                   >
-                    {t("general.agree-to")} <Button onClick={openTerms} colorScheme='cyan' variant='ghost' size={"sm"}>
-                      {t("general.terms-conditions")}
-                    </Button>
+                    {t("auth.signup.agree-all")}
                   </Checkbox>
-                  {errors.termsConditions && (
-                    <Text fontSize="14px" color="red" mt={2}>
-                      {errors.termsConditions.message}
-                    </Text>
-                  )}
-                  <Checkbox
-                    {...register("privacyPolicy", { required: "Please agree here first." })}
-                    isChecked={checkedItems.privacyPolicy}
-                    onChange={(e) => handleCheckboxChange("privacyPolicy")}
-                  >
-                    {t("general.agree-to")} <Button onClick={openPrivacy} colorScheme='cyan' variant='ghost' size={"sm"}>
-                    {t("general.privacy-policy")}
-                    </Button>
-                  </Checkbox>
-                    {errors.privacyPolicy && (
-                      <Text fontSize="14px" color="red" mt={2}>
-                        {errors.privacyPolicy.message}
-                      </Text>
+                  <Stack pl={6} mt={1} spacing={1}>
+                    {hasTerms && (
+                      <>
+                        <Checkbox
+                          isChecked={checkedItems.termsConditions}
+                          {...register("termsConditions", {
+                            required: "Please agree here first.",
+                          })}
+                          onChange={(e) =>
+                            handleCheckboxChange("termsConditions")
+                          }
+                        >
+                          {t("general.agree-to")}{" "}
+                          <Button
+                            onClick={openTerms}
+                            colorScheme="cyan"
+                            variant="ghost"
+                            size={"sm"}
+                          >
+                            {t("general.terms-conditions")}
+                          </Button>
+                        </Checkbox>
+                        {errors.termsConditions && (
+                          <Text fontSize="14px" color="red" mt={2}>
+                            {errors.termsConditions.message}
+                          </Text>
+                        )}
+                      </>
                     )}
-                  <Checkbox
-                    isChecked={checkedItems.refundPolicy}
-                    {...register("refundPolicy", { required: "Please agree here first." })}
-                    onChange={(e) => handleCheckboxChange("refundPolicy")}
-                  >
-                    {t("general.agree-to")} <Button onClick={openRefund} colorScheme='cyan' variant='ghost' size={"sm"}>
-                    {t("general.refund-policy")}
-                    </Button>
-                  </Checkbox>
-                    {errors.refundPolicy && (
-                      <Text fontSize="14px" color="red" mt={2}>
-                        {errors.refundPolicy.message}
-                      </Text>
+                    {hasPolicies && (
+                      <>
+                        <Checkbox
+                          {...register("privacyPolicy", {
+                            required: "Please agree here first.",
+                          })}
+                          isChecked={checkedItems.privacyPolicy}
+                          onChange={(e) =>
+                            handleCheckboxChange("privacyPolicy")
+                          }
+                        >
+                          {t("general.agree-to")}{" "}
+                          <Button
+                            onClick={openPrivacy}
+                            colorScheme="cyan"
+                            variant="ghost"
+                            size={"sm"}
+                          >
+                            {t("general.privacy-policy")}
+                          </Button>
+                        </Checkbox>
+                        {errors.privacyPolicy && (
+                          <Text fontSize="14px" color="red" mt={2}>
+                            {errors.privacyPolicy.message}
+                          </Text>
+                        )}
+                      </>
                     )}
-                </Stack>
-              </FormControl>
+                    {hasRefund && (
+                      <>
+                        <Checkbox
+                          isChecked={checkedItems.refundPolicy}
+                          {...register("refundPolicy", {
+                            required: "Please agree here first.",
+                          })}
+                          onChange={(e) => handleCheckboxChange("refundPolicy")}
+                        >
+                          {t("general.agree-to")}{" "}
+                          <Button
+                            onClick={openRefund}
+                            colorScheme="cyan"
+                            variant="ghost"
+                            size={"sm"}
+                          >
+                            {t("general.refund-policy")}
+                          </Button>
+                        </Checkbox>
+                        {errors.refundPolicy && (
+                          <Text fontSize="14px" color="red" mt={2}>
+                            {errors.refundPolicy.message}
+                          </Text>
+                        )}
+                      </>
+                    )}
+                  </Stack>
+                </FormControl>
+              )}
 
               {/* <Link
                 to={ROUTES.FORGET_PASSWORD}
@@ -329,9 +461,14 @@ const SignUp = () => {
               </Link> */}
 
               <Button
-                type="submit" borderRadius=".5rem" height="45px"
-                fontSize="1rem" bg="main.600" color="white"
-                textTransform="capitalize" fontWeight="bold"
+                type="submit"
+                borderRadius=".5rem"
+                height="45px"
+                fontSize="1rem"
+                bg="main.600"
+                color="white"
+                textTransform="capitalize"
+                fontWeight="bold"
                 isLoading={auth.isLoading}
                 _hover={{ bg: "main.600" }}
               >
@@ -355,9 +492,24 @@ const SignUp = () => {
         </div>
       </section>
       <PoweredBy img={signupArt} />
-      <TermsAndConditionsModal isOpen={isTermsOpen} onClose={closeTerms} />
-      <PrivacyPoliciesModal isOpen={isPrivacyOpen} onClose={closePrivacy} />
-      <RefundPolicyModal isOpen={isRefundOpen} onClose={closeRefund} />
+      <TermsAndConditionsModal
+        terms={terms}
+        isSuccess={isSuccess}
+        isOpen={isTermsOpen}
+        onClose={closeTerms}
+      />
+      <PrivacyPoliciesModal
+        policies={policies}
+        isSuccess={isPrivacySuccess}
+        isOpen={isPrivacyOpen}
+        onClose={closePrivacy}
+      />
+      <RefundPolicyModal
+        policies={refundPolicies}
+        isSuccess={isRefundSuccess}
+        isOpen={isRefundOpen}
+        onClose={closeRefund}
+      />
     </section>
   );
 };

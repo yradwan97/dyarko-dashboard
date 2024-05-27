@@ -1,17 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  Text,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 import { PromoteButton } from "components/shared/UI/buttons";
 import {
   Property,
@@ -22,9 +9,9 @@ import {
   usePropertyActions,
 } from "features/properties";
 import { useAppDispatch } from "hooks";
-import { t } from "i18next";
 import { axiosInstance } from "services/axiosInstance";
 import { Optional } from "types";
+import ExtendPostModal from "./ExtendPostModal";
 
 interface PropertyCardWithActionsProps {
   property: Optional<Property>;
@@ -42,7 +29,6 @@ const PropertyCardWithActions = ({
   };
 
   const handlePropertyEdit = () => {
-    console.log(property)
     dispatch(toggleActiveEditPropertyModal())
     dispatch(setEditProperty(property))
   };
@@ -73,30 +59,7 @@ const PropertyCardWithActions = ({
           onExtend={handleOpen}
         />
       </div>
-      <Modal isOpen={isOpen} onClose={onClose} isCentered>
-        <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(10px)" />
-        <ModalContent height="40%">
-          <ModalHeader textAlign={"center"} textTransform={"capitalize"}>
-            {t("general.extend.extend-appear-time")}
-          </ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Box>
-              <Text fontSize={20}>
-                {t("general.extend.confirm")}
-              </Text>
-            </Box>
-          </ModalBody>
-          <ModalFooter gap={3}>
-              <Button variant="solid" onClick={handleExtendAppearanceTime}>
-                {t("general.confirm")}
-              </Button>
-              <Button variant={"outline"} onClick={onClose}>
-                {t("general.cancel")}
-              </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      <ExtendPostModal isOpen={isOpen} onClose={onClose} handleExtendAppearanceTime={handleExtendAppearanceTime} />
     </PropertyCard>
   );
 };

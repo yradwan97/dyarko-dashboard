@@ -57,6 +57,8 @@ export enum PropertyClass {
 export interface Property {
   _id: string;
   appear_to?: string
+  city?: string
+  region?: string
   category: PropertyCategory;
   payment_type: PaymentType;
   type: PropertyType;
@@ -69,7 +71,7 @@ export interface Property {
   discount: number | null
   discount_expiration_date: string | null
   image: Nullable<string>;
-  images: Nullable<string>[];
+  images?: string[] | null;
   code: string;
   auto_no: string;
   title: string;
@@ -81,16 +83,16 @@ export interface Property {
   available_date: Date;
   createdAt: Date | string
   has_renter?: boolean;
-  has_beach: boolean;
-  has_pool: boolean;
-  has_garden: boolean;
-  owner_phone: string;
-  is_daily: boolean;
-  is_weekly: boolean
-  is_monthly: boolean;
-  daily_price: number;
-  weekly_price: number;
-  monthly_price: number;
+  has_beach?: boolean;
+  has_pool?: boolean;
+  has_garden?: boolean;
+  owner_phone?: string;
+  is_daily?: boolean;
+  is_weekly?: boolean
+  is_monthly?: boolean;
+  daily_price?: number;
+  weekly_price?: number;
+  monthly_price?: number;
   replace_with?: PropertyCategory;
   saved: number;
   views: number;
@@ -104,6 +106,29 @@ export interface Property {
   tents_info?: Tent[]
   lat: number
   long: number
+  down_payment?: number
+  min_months?: number
+  max_installment_period?: number
+  paymentFrequency?: string
+  user?: number
+  commission: number
+  capacity?: number
+  rules? : string | null
+  is_terminated?: boolean
+  terminated_reason?: string | null
+  rent_details?: {
+    user: string
+    amount: number
+    start_date: string
+    end_date: string
+    rent_type: string
+  }
+}
+
+export interface EditablePropertyWithExtraPropertiesAndFlatStructure extends Property {
+  edited_image?: string | FormData | null
+  edited_interior_design?: string | FormData | null
+  deleted_images?: string[] | null
 }
 
 export interface PropertiesFilter extends Filter {

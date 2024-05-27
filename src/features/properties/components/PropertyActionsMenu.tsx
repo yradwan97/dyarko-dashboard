@@ -84,7 +84,38 @@ const PropertyActionsMenu = ({
               )}
             </Menu.Item>
           ) : null}
-          
+          <Menu.Item as="div" className="p-2">
+            {({ active }) => (
+              <button
+                className={clsx(
+                  "group",
+                  "text-black",
+                  "flex",
+                  "w-full",
+                  "items-center",
+                  "rounded-md",
+                  "px-4",
+                  "py-2.5",
+                  "gap-x-3",
+                  "text-sm",
+                  "capitalize",
+                  {
+                    "bg-main-200": active,
+                  }
+                )}
+                onClick={onEdit}
+              >
+                <FaRegEdit className="w-5 h-5 text-gray-500" />
+                <Typography
+                  variant="body-md-medium"
+                  as="span"
+                  className="text-inherit"
+                >
+                  {t("general.edit")}
+                </Typography>
+              </button>
+            )}
+          </Menu.Item>
           <Menu.Item as="div" className="p-2">
             {({ active }) => (
               <button

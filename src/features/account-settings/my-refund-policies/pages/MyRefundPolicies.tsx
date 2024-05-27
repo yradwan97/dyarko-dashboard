@@ -1,6 +1,7 @@
 import React, { BaseSyntheticEvent, useEffect, useState } from "react";
 import { Button, Typography } from "components/shared/UI";
 import { CloseIcon } from "@chakra-ui/icons";
+import { MdDeleteForever } from "react-icons/md";
 import { PDFIcon } from "components/shared/icons";
 import { Link, useToast, IconButton } from "@chakra-ui/react";
 import UploadPolicyModal from "../components/UploadPolicyModal";
@@ -37,8 +38,8 @@ const MyRefundPolicies = () => {
         <Typography variant="body-md-medium" as="h3">
           {t("account.policy.policies")}
         </Typography>
-        {isSuccess && policies.length > 0 ? (
-          policies.map((policy: RefundPolicy, index: number) => (
+        {isSuccess && Array.isArray(policies) && policies!.length > 0 ? (
+          policies!.map((policy: RefundPolicy, index: number) => (
             <div key={index} className="relative">
               <Link
                 display="flex"
@@ -56,10 +57,11 @@ const MyRefundPolicies = () => {
                   {policy.name}
                 </Typography>
                 <IconButton
+                  variant={"ghost"}
                   aria-label="Delete Policy"
-                  icon={<CloseIcon />}
+                  icon={<MdDeleteForever />}
                   className="delete-button invisible mr-1"
-                  size="sm"
+                  size="md"
                   right="5px"
                   position={"absolute"}
                   top="50%"

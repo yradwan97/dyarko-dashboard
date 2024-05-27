@@ -46,7 +46,7 @@ const Map = ({
       {isDraggable && <p className="mb-2">{t("map.select-location")}</p>}
         <GoogleMap
           mapContainerStyle={mapStyles}
-          zoom={11}
+          zoom={13}
           center={defaultCenter}
         >
           <Marker

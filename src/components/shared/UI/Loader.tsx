@@ -9,10 +9,10 @@ type LoaderProps = {
 const Loader = ({ isFullScreen = true }: LoaderProps) => {
   const loaderClassName = `${
     isFullScreen ? "fixed" : "absolute"
-  } top-0 left-0 z-50 flex flex-col h-full w-full items-center justify-center bg-main-400 bg-opacity-50 space-y-6`;
+  } top-0 left-0 z-[99] flex flex-col h-full w-full items-center justify-center bg-main-600 bg-opacity-50 space-y-6`;
   return (
     <div className={loaderClassName}>
-      <h1 className="text-white">{t("general.loading")}</h1>
+      <h1 className="text-white ">{t("general.loading")}</h1>
       <Spinner />
     </div>
   );

@@ -8,6 +8,7 @@ import {
   Flex,
   Avatar,
   Text,
+  useMediaQuery,
 } from '@chakra-ui/react'
 
 import { logout } from "features/auth/services/authSlice";
@@ -19,6 +20,7 @@ import { t } from 'i18next';
 
 function LoginDropdown() {
   const auth = useAppSelector(state => state.auth);
+  const [isMediumScreen, isLargeScreen] = useMediaQuery(["(min-width: 30em) and (max-width: 48em)", "(min-width: 48em)"])
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -26,12 +28,12 @@ function LoginDropdown() {
     <Menu>
       <MenuButton
         as={Button} rightIcon={<BiChevronDown />}
-        border="1.5px solid" borderColor="main.400" bg="white"
+        border="1.5px solid" borderColor="main.400" bg="white" width={"auto"}
         paddingBlock={6} paddingInline={3} borderRadius="8px" textTransform="capitalize"
       >
         <Flex alignItems="center" gap={2}>
           <Avatar name={auth.user?.name} size="sm" />
-          {auth.user?.name?.slice(0, 3)}
+          {isLargeScreen ? auth.user?.name : isMediumScreen ? auth.user?.name?.slice(0, 3) : null}
         </Flex>
       </MenuButton>
       <MenuList p={2} minW="auto">

@@ -6,7 +6,8 @@ import {
   MenuItem,
   Button,
   Text,
-  Image
+  Image,
+  useMediaQuery
 } from "@chakra-ui/react"
 import * as FiIcons from "react-icons/fi";
 import kuwaitSvg from "assets/svg/kuwait.svg";
@@ -16,6 +17,8 @@ const LocalizationDropdown = ({
   selectedLang,
   onSelect
 }) => {
+
+  const [smallScreen, mediumScreen] = useMediaQuery(["(max-width: 30em)", "(min-width: 30em) and (max-width: 48em)"])
   const countries = [
     { id: 1, value: "en", name: "English", icon: USSvg },
     { id: 2, value: "ar", name: "العربية", icon: kuwaitSvg },
@@ -30,8 +33,8 @@ const LocalizationDropdown = ({
     <Menu>
       <MenuButton
         as={Button} bg="none" border="1px solid" borderColor="gray.200"
-        color="gray.400" height="42px" width={"20%"}
-        rightIcon={<FiIcons.FiChevronDown size={13} />}
+        color="gray.400" height="42px" width={24}
+        rightIcon={<FiIcons.FiChevronDown size={smallScreen ? 10 : 13} />}
       >
         <Image
           src={currentActiveImage}

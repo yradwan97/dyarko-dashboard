@@ -9,15 +9,33 @@ export const useGetWalletQuestionMarkInfo = (tab : string) => {
     >(
         ['question-mark', tab],
         async () => {
-            if (tab === "user-wallet") {
-                return getWalletQuestionMarkData()
-            } else if (tab === "balance") {
+            if (tab === "balance") {
                 return await getBalanceQuestionMarkData()
             } else if (tab === "points") {
                 return await getPointsQuestionMarkData()
             } else {
                 throw new Error("invalid tab")
             }
+        }
+    )
+    return {
+        data,
+        isSuccess,
+        isError,
+        isLoading,
+        error,
+        refetch
+    }
+}
+
+export const useGetUserWalletQuestionMarkInfo = () => {
+    const {data, isSuccess, isError, isLoading, error, refetch} = useQuery<
+    any,
+    Error
+    >(
+        ['user-wallet-question-mark'],
+        async () => {
+            return await getWalletQuestionMarkData()
         }
     )
     return {

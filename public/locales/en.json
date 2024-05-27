@@ -190,7 +190,9 @@
     "open-file": "Open file",
     "for": "For",
     "read-more": "read more",
-    "remove": "Remove"
+    "remove": "Remove",
+    "change-language": "Change Language",
+    "property-terminated": "This property has been terminated."
   },
   "layout": {
     "navbar": {
@@ -329,7 +331,8 @@
         }
       },
       "edit": {
-        "edit-property": "Edit property"
+        "edit-property": "Edit property",
+        "view-image": "View Image"
       },
       "create": {
         "validation": {
@@ -408,6 +411,8 @@
         },
         "main-image": "main image",
         "images": "images",
+        "current-images": "current images",
+        "new-images": "new images",
         "title": "title",
         "description": "description",
         "area": "area",

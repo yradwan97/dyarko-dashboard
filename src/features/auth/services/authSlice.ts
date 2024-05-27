@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { axiosInstance } from "services/axiosInstance";
+import { axiosInstance, noAuthAxios } from "services/axiosInstance";
 import cookie from "utils/cookie";
 
 let initialState: any = {
@@ -33,7 +33,7 @@ export const register = createAsyncThunk(
   "auth/register",
   async (args: Record<string, any>, thunkApi) => {
     try {
-      const { data } = await axios.post(
+      const { data } = await noAuthAxios.post(
         "https://api.dyarko.com/users",
         {
           role: "owner",

@@ -1,14 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Nullable } from "types";
-import { Property } from "../types";
+import { EditablePropertyWithExtraPropertiesAndFlatStructure } from "../types";
 
 interface InitialState {
-  isActive: boolean
-  paymentOption: string
-  editProperty: Nullable<Property>
-  isEditActive: boolean
+  isActive: boolean;
+  paymentOption: string;
+  editProperty: any;
+  isEditActive: boolean;
+  isUpdating: boolean;
 }
-const initialState: InitialState = { isActive: false, paymentOption: "points", editProperty: null, isEditActive: false };
+const initialState: InitialState = {
+  isActive: false,
+  paymentOption: "points",
+  editProperty: null,
+  isEditActive: false,
+  isUpdating: false,
+};
 
 const createPropertyModalSlice = createSlice({
   name: "createPropertyModal",
@@ -18,17 +25,26 @@ const createPropertyModalSlice = createSlice({
       state.isActive = !state.isActive;
     },
     toggleActiveEditPropertyModal: (state) => {
-      state.isEditActive = !state.isEditActive
+      state.isEditActive = !state.isEditActive;
     },
-    setEditProperty: (state, {payload}) => {
-      state.editProperty = payload
+    setEditProperty: (state, { payload }) => {
+      state.editProperty = payload;
+    },
+    toggleIsUpdating: (state) => {
+      state.isUpdating = !state.isUpdating;
     },
     setSelectedPaymentOption: (state, { payload }) => {
-      state.paymentOption = payload
-    }
+      state.paymentOption = payload;
+    },
   },
 });
 
-export const { toggleActiveCreatePropertyModal, setSelectedPaymentOption, toggleActiveEditPropertyModal, setEditProperty } = createPropertyModalSlice.actions;
+export const {
+  toggleActiveCreatePropertyModal,
+  setSelectedPaymentOption,
+  toggleActiveEditPropertyModal,
+  toggleIsUpdating,
+  setEditProperty,
+} = createPropertyModalSlice.actions;
 
-export default createPropertyModalSlice.reducer
+export default createPropertyModalSlice.reducer;

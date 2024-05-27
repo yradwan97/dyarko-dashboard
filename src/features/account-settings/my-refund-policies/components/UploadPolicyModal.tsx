@@ -20,6 +20,7 @@ const UploadPolicyModal: React.FC<UploadPolicyModalProps> = ({
   const toast = useToast({ position: "top" });
 
   const handleFileChange = (event: BaseSyntheticEvent) => {
+    console.log(event)
     setSelectedFile(event.target.files[0]);
   };
 
@@ -75,6 +76,7 @@ const UploadPolicyModal: React.FC<UploadPolicyModalProps> = ({
         />
         <Input
           type="file"
+          accept=".pdf"
           height="45px"
           borderColor="gray.200"
           borderWidth={1}

@@ -1,8 +1,8 @@
 import { axiosInstance as axios } from "services/axiosInstance";
-import { useToast } from "@chakra-ui/react";
+import { useMediaQuery, useToast } from "@chakra-ui/react";
 
 import { BiPlus } from "react-icons/bi";
-
+import { BsFillHouseAddFill } from "react-icons/bs";
 import NotificationDropdown from "./NotificationDropdown";
 import Button from "components/shared/UI/buttons/Button";
 import VerifyOtpModal from "components/modals/VerifyOtpModal";
@@ -18,8 +18,10 @@ import { useAppSelector } from "hooks";
 import { useEffect, useState } from "react";
 import LocalizationDropdown from "features/auth/components/LocalizationDropdown";
 import { useTranslation } from "react-i18next";
+import { closeSidebar } from "store/sidebar/sidebarSlice";
 
 const Navbar = () => {
+  const [smallScreen] = useMediaQuery("(max-width: 30em)")
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const { t, i18n } = useTranslation();
   useEffect(() => {
@@ -29,9 +31,14 @@ const Navbar = () => {
       i18n.changeLanguage(savedLanguage);
     }
   }, []);
+
+  useEffect(() => {
+    if (smallScreen) {
+      dispatch(closeSidebar())
+    }
+  }, [smallScreen]);
   
   const handleLanguageChange = (language) => {
-    // if (language !== i18n.language) window.history.go(0)
     setSelectedLanguage(language);
     localStorage.setItem("language", language);
     i18n.changeLanguage(language);
@@ -94,17 +101,19 @@ const Navbar = () => {
     <>
       <nav className="bg-white border-b-2 border-solid border-main-100 z-[999] relative">
         <div className="container flex justify-between items-center py-4">
-          <div className="flex w-2/5 justify-between items-center">
-            <LocalizationDropdown
-              onSelect={handleLanguageChange}
-              selectedLang={selectedLanguage}
-            />
+          <div className="flex w-1/3  lg:w-1/2 items-center">
+            <div className="hidden md:flex w-2/3">
+              <LocalizationDropdown
+                onSelect={handleLanguageChange}
+                selectedLang={selectedLanguage}
+              />
+            </div>
             <span className="w-[4px] h-full bg-black/10" />
-            <h4 className="hidden md:block text-black capitalize text-md font-bold">
+            <h4 className="hidden md:block text-black justify-start capitalize text-md font-bold">
               {t("layout.sidebar.dashboard")}
             </h4>
           </div>
-          <div className="ltr:ml-auto flex items-center gap-x-4">
+          <div className="ltr:ml-auto flex items-center gap-x-2 lg:gap-x-4">
             <button
               className="w-10 h-10 bg-main-yellow-600 rounded-full flex justify-center rtl:me-2 items-center"
               onClick={async () => {
@@ -129,7 +138,7 @@ const Navbar = () => {
             </button>
             <Button
               variant="primary"
-              className="hidden md:flex items-center gap-x-1 py-3"
+              className="!rounded-full  flex items-center !p-2"
               onClick={async () => {
                 if (!auth.user?.is_confirmed) {
                   return setShowVerifyAccountModal(true);
@@ -137,10 +146,11 @@ const Navbar = () => {
                 await checkPropertyUploadCapability();
               }}
             >
-              <BiPlus className="text-white text-xl stroke-1" />
-              <span className="text-sm font-bold">
+              <BsFillHouseAddFill size={20} />
+              {/* <BiPlus />
+              <span className="lg:flex text-sm font-bold">
                 {t("layout.navbar.add-a-property")}
-              </span>
+              </span> */}
             </Button>
             <NotificationDropdown />
             {/* ---- divider ----- */}

@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import * as AiIcons from "react-icons/ai";
 import * as MdIcons from "react-icons/md";
@@ -15,12 +15,20 @@ import {
 } from "components/shared/icons";
 import { useAppDispatch, useAppSelector } from "hooks";
 import { ROUTES } from "configs/routes";
+import { useMediaQuery } from "@chakra-ui/react";
 
 const Sidebar = () => {
   const { t, i18n } = useTranslation();
   const dispatch = useAppDispatch();
+  const [smallScreen] = useMediaQuery("(max-width: 30em)")
   const auth = useAppSelector((state) => state.auth);
   const sidebar = useAppSelector((state) => state.sidebar);
+  useEffect(() => {
+    console.log(sidebar.isActive)
+  }, [sidebar.isActive]);
+  useEffect(() => {
+    console.log("small", smallScreen)
+  }, [smallScreen]);
   const sidebarLinks = [
     {
       path: ROUTES.DASHBOARD,
@@ -70,12 +78,12 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className={`group bg-white min-h-screen w-[250px] fixed z-40 border-r-2 border-main-100 border-solid md:ml-[0] duration-500 ease-in-out ${sidebar.isActive && "w-[80px]"
+        className={`group bg-white min-h-screen w-[250px] fixed z-40 border-r-2 border-main-100 border-solid md:ml-[0] duration-500 ease-in-out ${!sidebar.isActive && `${smallScreen ? "w-[105px]" : "w-[80px]"}`
           }`}
       >
         <div className="flex items-center justify-between mt-[1.5rem] mx-[1.2rem] mb-[2rem]">
           <div className="flex items-center">
-            <button onClick={() => dispatch(closeSidebar())}>
+            <button disabled={smallScreen} onClick={() => dispatch(openSidebar())}>
               <img
                 className="h-[48px] object-contain"
                 src={logo}
@@ -83,7 +91,7 @@ const Sidebar = () => {
               />
             </button>
             <div
-              className={`ms-2 text-lg ${sidebar.isActive && "hidden"}`}
+              className={`ms-2 text-lg ${!sidebar.isActive && "hidden"}`}
             >
               <h1 className="text-main-blue font-bold capitalize text-[20px]">
                 {auth.user?.name}
@@ -104,8 +112,8 @@ const Sidebar = () => {
           </div>
           <button
             type="button"
-            className={`${sidebar.isActive && "hidden"}`}
-            onClick={() => dispatch(openSidebar())}
+            className={`${!sidebar.isActive && "hidden"}`}
+            onClick={() => dispatch(closeSidebar())}
           >
             <svg
               width="28"

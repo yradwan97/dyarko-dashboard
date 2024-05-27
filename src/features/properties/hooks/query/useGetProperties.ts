@@ -14,7 +14,7 @@ export const useGetProperties = (filter: PropertiesFilter) => {
     ...filter,
     owner: userId,
   };
-  const { data, isLoading, isSuccess, isError, error } = useQuery<
+  const { data, isLoading, isSuccess, isError, error, refetch } = useQuery<
     GetPropertiesReturn,
     Error
   >({
@@ -29,6 +29,7 @@ export const useGetProperties = (filter: PropertiesFilter) => {
     isSuccess,
     isError,
     error,
+    refetch
   };
 };
 

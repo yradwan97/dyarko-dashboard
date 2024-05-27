@@ -19,11 +19,12 @@ import { t } from "i18next";
 
 interface PrivacyPoliciesModalProps {
     isOpen: boolean;
+    policies: PrivacyPolicy[] | undefined
+    isSuccess: boolean
     onClose: () => void;
   }
 
-const PrivacyPoliciesModal = ({isOpen, onClose}: PrivacyPoliciesModalProps) => {
-    const {policies, isSuccess} = useGetPrivacyPolicy()
+const PrivacyPoliciesModal = ({isOpen, policies, isSuccess, onClose}: PrivacyPoliciesModalProps) => {
   return (
     <Modal
       isCentered

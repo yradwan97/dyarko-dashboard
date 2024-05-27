@@ -7,39 +7,30 @@ import {
   Input,
   Radio,
   RadioGroup,
-  Select,
   SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { PhoneInput } from "components/shared/form";
-import { Property } from "features/properties";
 import i18next, { t } from "i18next";
-import { useEffect } from "react";
-import { Nullable } from "types";
 
 export interface BuyingOptionsProps {
   register: any;
   errors: any;
   getValues: any;
   setValue: any;
-  isEditable?: boolean
-  property?: Nullable<Property>
 }
 
 const BuyingOptions = ({
   register,
   errors,
-  isEditable = false,
   getValues,
 }: BuyingOptionsProps) => {
+
   const isRtl = i18next.language === "ar"
-  // useEffect(() => {
-  //   console.log(getValues())
-  // }, [getValues()]);
+  
   return (
     <div className="p-6 border border-gray-200 rounded-lg mt-11 text-left">
-      {!isEditable && <RadioGroup defaultValue="rent">
+       <RadioGroup defaultValue="rent">
         <SimpleGrid columns={{ base: 2, md: 3, lg: 5 }} spacing={2} mb={6}>
           <Box
             borderColor="gray.200"
@@ -148,9 +139,9 @@ const BuyingOptions = ({
             </Radio>
           </Box>
         </SimpleGrid>
-      </RadioGroup>}
+      </RadioGroup>
 
-      {(!isEditable && getValues("payment_type") === "rent") && (
+      { getValues("payment_type") === "rent" && (
         <FormControl width={"100%"} py={2}>
           <RadioGroup defaultValue="false" width={"fit-content"} py={2}>
             <FormLabel fontSize="1rem" textTransform="capitalize">

@@ -24,6 +24,7 @@ import PropertyFeatures from "./PropertyFeatures";
 import { t } from "i18next";
 import { Property } from "features/properties/types";
 import { Optional } from "types";
+import { toastifyClient } from "services/toastifyClient";
 
 const steps = [
   { title: "category" },
@@ -33,7 +34,7 @@ const steps = [
 ];
 
 const CreatePropertyModal = () => {
-  const toast = useToast({ position: "top", status: "error", duration: 2000 });
+  // const toast = useToast({ position: "top", duration: 2000 });
   const createPropertyModal = useAppSelector(
     (state) => state.createPropertyModal
   );
@@ -87,7 +88,7 @@ const CreatePropertyModal = () => {
         if (files.length > 0) {
         if (prop === "images") {
           for (let i = 0; i < files.length; i++) {
-            formData.set(`images[${i}]`, files[i]);
+            formData.append(`images`, files[i]);
           }
         } else {
           formData.set(prop, files[0]);
@@ -107,21 +108,24 @@ const CreatePropertyModal = () => {
     formData.set("locations[0]", "cairo");
     formData.set("locations[1]", "new gahra");
     formData.set("payment_option", createPropertyModal.paymentOption);
+    // @ts-ignore
+    formData.set("available_date", new Date(formData.get("available_date")).toISOString())
     try {
       let res = await axios.post("https://api.dyarko.com/properties", formData, {
         headers: {
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "multipart/form-data"
         },
       });
 
       if (res.data.success) {
-        toast({description: "Property created successfully."})
+        toastifyClient.success({message: "Property created successfully."})
         dispatch(toggleActiveCreatePropertyModal())
       }
     } catch (e: any) {
-      toast({
-        description:
-          (e?.response?.data.errors[0] && e.response.data.errors[0].msg) ||
+      console.error(e)
+      toastifyClient.error({
+        message:
+          (e?.response?.data?.errors && e.response.data.errors[0].msg) ||
           "error",
       });
     }
@@ -262,9 +266,8 @@ const CreatePropertyModal = () => {
                     return;
                   }
                   if (errors && Object.keys(errors)!.length > 0) {
-                    toast({
-                      description: "please correct the errors",
-                      colorScheme: "orange",
+                    toastifyClient.warning({
+                      message: "please correct the errors",
                     });
                     return;
                   }

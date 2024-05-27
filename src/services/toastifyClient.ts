@@ -5,6 +5,7 @@ export interface ToastifyClient {
   loading: (toastifyParams: ToastifyParams) => Id;
   error: (toastifyParams: ToastifyParams) => Id;
   success: (toastifyParams: ToastifyParams) => Id;
+  warning: (toastifyParams: ToastifyParams) => Id;
 }
 
 type ToastifyParams = {
@@ -29,4 +30,9 @@ export const toastifyClient: ToastifyClient = {
     toast.update(id, { ...toastifyConfigs.SUCCESS, render: message });
     return id;
   },
+  warning: ({ message, id }: ToastifyParams) => {
+    if (id === undefined) return toast(message, toastifyConfigs.WARNING);
+    toast.update(id, { ...toastifyConfigs.WARNING, render: message });
+    return id;
+  }
 };

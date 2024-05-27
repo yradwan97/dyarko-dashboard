@@ -22,20 +22,23 @@ export const toastifyConfigs: ToastifyConfigs = {
   ERROR: {
     ...TOASTIFY_DEFAULT_OPTIONS,
     type: toast.TYPE.ERROR,
-    autoClose: false,
-    isLoading: false,
+    // isLoading: false,
+    position: "top-center"
   },
   SUCCESS: {
     ...TOASTIFY_DEFAULT_OPTIONS,
     type: toast.TYPE.SUCCESS,
-    isLoading: false,
+    // isLoading: false,
+    position: "top-center"
   },
   WARNING: {
     ...TOASTIFY_DEFAULT_OPTIONS,
     type: toast.TYPE.WARNING,
+    position: "top-center"
   },
   INFO: {
     ...TOASTIFY_DEFAULT_OPTIONS,
     type: toast.TYPE.INFO,
+    position: "top-center"
   },
 };

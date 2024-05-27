@@ -1,12 +1,18 @@
 import { Nullable, Optional } from "types";
 import clsx from "classnames";
+import { Typography } from "components/shared/UI";
 
 interface PropertyImageProps {
   imageSrc: Nullable<string> | undefined;
   propertyTitle: Optional<string>;
+  isTerminated?: boolean;
 }
 
-const PropertyImage = ({ imageSrc, propertyTitle }: PropertyImageProps) => {
+const PropertyImage = ({
+  imageSrc,
+  propertyTitle,
+  isTerminated,
+}: PropertyImageProps) => {
   if (!imageSrc)
     return (
       <div
@@ -18,16 +24,31 @@ const PropertyImage = ({ imageSrc, propertyTitle }: PropertyImageProps) => {
           "h-56",
           "rounded-t-lg"
         )}
-      ></div>
+      >
+        {isTerminated && (
+          <div className="absolute bg-black text-white z-999 top-1 left-1">
+            <Typography className="capitalize" variant="body-xs-medium" as="p">
+              Terminated
+            </Typography>
+          </div>
+        )}
+      </div>
     );
 
-  return (
+  return (  
     <div className="relative h-56">
       <img
         src={imageSrc}
         alt={propertyTitle}
         className="w-full h-full rounded-t-lg object-cover"
       />
+      {isTerminated && (
+        <div className="absolute bg-white text-black text-[.85rem] p-1 rounded-lg top-1 left-1">
+          <Typography className="capitalize" variant="body-xs-medium" as="p">
+            Terminated
+          </Typography>
+        </div>
+      )}
     </div>
   );
 };

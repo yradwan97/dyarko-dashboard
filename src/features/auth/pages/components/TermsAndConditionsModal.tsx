@@ -19,14 +19,17 @@ import { t } from "i18next";
 
 interface TermsAndConditionsModalProps {
   isOpen: boolean;
+  terms: TermsCondition[] | undefined
+  isSuccess: boolean
   onClose: () => void;
 }
 
 const TermsAndConditionsModal = ({
   isOpen,
   onClose,
+  terms,
+  isSuccess
 }: TermsAndConditionsModalProps) => {
-  const { terms, isSuccess } = useGetTermsAndConditions();
   return (
     <Modal
       isCentered

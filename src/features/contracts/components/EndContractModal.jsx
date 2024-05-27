@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import { Button, FormControl, FormLabel, Input, Stack, Text, Textarea, useToast } from "@chakra-ui/react"
 import { Modal, Typography } from "components/shared/UI"
 import { requestEndContract } from "../services/contractsService"
+import { t } from "i18next"
 
 const EndContractModal = ({
   data,
@@ -18,6 +19,7 @@ const EndContractModal = ({
   } = useForm({
     defaultValues: {
       property: data.property?._id,
+      rentId: data?._id
     }
   });
 

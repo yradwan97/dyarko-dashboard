@@ -21,8 +21,8 @@ export const useGetInvoices = (
   >({
     queryKey: [INVOICES_KEY, { ...filter }],
     queryFn: () => getInvoices(newFilter),
-    onError: (err) => toastifyClient.error({ message: err.message }),
-    enabled: !!propertyId,
+    onError: (err: { message: any; }) => toastifyClient.error({ message: err.message }),
+    enabled: !!propertyId
   });
   return {
     data,
